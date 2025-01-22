@@ -1,4 +1,4 @@
-# Brain Boosters Tutoring Platform
+# Brain Boosters Tutoring Platform (Request for Proposal)
 
 **Brain Boosters** is a community of passionate teachers who’ve come together to create an app that makes finding the perfect tutor simple and stress-free. Whether your child needs help catching up, preparing for exams, or just wants to explore a new subject, the goal of Brain Boosters is to connect parents with experienced tutors nearby. It’s all about bringing quality education closer to home and making learning accessible, personal, and effective for every family.
 
