@@ -30,6 +30,11 @@ React can also be easily integrated with Django for handling front-end and back-
 - Conduct an initial meeting to align on requirements and expectations.
 - Start setting up the project repository on GitHub and outline the structure.
 
+#### Design Inspirations
+During Week 1, Carlo and Evgenia collaborated to gather design inspirations for Brain Boosters. They researched websites like Alloprof, KidKinder, and Varsity Tutors to explore how playful designs, vibrant color palettes, and user friendly layouts can engage users across a wide age range. The aim is to create a website that is fun and enjoyable for all users, from young kids to high schoolers preparing to graduate.
+
+After gathering the research, they discussed findings with the team to refine the approach and agree on the direction for the platform’s UI. This research will inform the development of the color palette, wireframes, and mockups for the homepage, planned for the rest of Week 1.
+
 ### Week 2 - Back-End Setup & Initial Front-End Design
 - Set up the Django project and database schema (User models, Tutor models, Session models).
 - Implement user authentication and profile management (registration, login, password reset).
