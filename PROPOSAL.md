@@ -21,6 +21,16 @@ We will be using React for the development of the front-end of this project. Rea
 
 React can also be easily integrated with Django for handling front-end and back-end separately. This allows for a smooth development process where Django takes care of the back-end, while React focuses on rendering dynamic content and managing the user interface.
 
+## Design Inspirations
+
+Our design team is pulling inspiration from the following websites to create the UI for Brain Boosters:
+
+- [Alloprof](https://www.alloprof.qc.ca/)  
+- [KidKinder](https://technext.github.io/kidkinder/index.html)  
+- [Varsity Tutors](https://www.varsitytutors.com/)  
+
+Since Brain Boosters is meant for a wide age range, from young kids in elementary school to high schoolers getting ready to graduate, we want the site to be fun and enjoyable, catering to everyone’s tastes. These sites stand out with their playful designs, vibrant color palettes, organized content, and some illustrations with a touch of animation. We will be blending these elements to create a website that’s engaging and enjoyable for all ages.
+
 ## Milestones
 
 ### Week 1 - Proposal Submission & Initial Planning
@@ -60,3 +70,5 @@ After gathering the research, they discussed findings with the team to refine th
 - Final bug fixes, performance improvements.
 - Complete the user interface.
 - Present the completed platform.
+
+
