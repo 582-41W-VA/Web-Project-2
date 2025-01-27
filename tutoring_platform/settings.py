@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tutors',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +122,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Zoom API credentials
+ZOOM_API_KEY = 'vqjwU_xfSgagNpe3zb7iFQ'  
+
+# Zoom API secret
+ZOOM_API_SECRET = '7JkG1be6tvDOKE1UvKZSQh70O4eZpZr7'  
