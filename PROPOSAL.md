@@ -16,11 +16,6 @@ Brain Boosters tutoring services are mainly designed for school-aged kids betwee
 ### Django
 We will be using Django for the development of the back-end structure for this project. Django’s built-in tools will make it easy to quickly build this platform. It integrates well with third-party services like Google Maps and PayPal which we will need for this project. It also has excellent documentation meaning developers have access to plenty of resources to handle any development challenges.
 
-### React
-We will be using React for the development of the front-end of this project. React will allow us to break down the UI into reusable components. For example, we can have reusable components for tutor profiles, session booking forms, or search filters, making the development process more efficient.
-
-React can also be easily integrated with Django for handling front-end and back-end separately. This allows for a smooth development process where Django takes care of the back-end, while React focuses on rendering dynamic content and managing the user interface.
-
 ## Design Inspirations
 
 Our design team is pulling ideas from the following websites to create the UI for Brain Boosters:
@@ -40,6 +35,11 @@ Since Brain Boosters is meant for a wide age range, from young kids in elementar
 - Assign roles and responsibilities to each team member.
 - Conduct an initial meeting to align on requirements and expectations.
 - Start setting up the project repository on GitHub and outline the structure.
+
+#### Design Inspirations
+During Week 1, Carlo and Evgenia collaborated to gather design inspirations for Brain Boosters. They researched websites like Alloprof, KidKinder, and Varsity Tutors to explore how playful designs, vibrant color palettes, and user friendly layouts can engage users across a wide age range. The aim is to create a website that is fun and enjoyable for all users, from young kids to high schoolers preparing to graduate.
+
+After gathering the research, they discussed findings with the team to refine the approach and agree on the direction for the platform’s UI. This research will inform the development of the color palette, wireframes, and mockups for the homepage, planned for the rest of Week 1.
 
 ### Week 2 - Back-End Setup & Initial Front-End Design
 - Set up the Django project and database schema (User models, Tutor models, Session models).
@@ -66,3 +66,5 @@ Since Brain Boosters is meant for a wide age range, from young kids in elementar
 - Final bug fixes, performance improvements.
 - Complete the user interface.
 - Present the completed platform.
+
+
