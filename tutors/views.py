@@ -1,25 +1,9 @@
 from django.shortcuts import render
-from django.http import JsonResponse
-from .zoom_service import generate_zoom_meeting
+from .jitsi_service import generate_meeting_id
 
-def create_zoom_meeting(request):
-    meeting = generate_zoom_meeting()
-    if meeting:
-        return JsonResponse({
-            'join_url': meeting['join_url'],
-            'start_url': meeting['start_url'],
-            'meeting_id': meeting['meeting_id'],
-        })
-    else:
-        return JsonResponse({'error': 'Failed to create meeting'}, status=500)
+def jitsi_meeting_view(request):
+    meeting_id = generate_meeting_id()
+    jitsi_url = f'https://meet.jit.si/{meeting_id}' 
+    return render(request, 'jitsi_meeting.html', {'jitsi_url': jitsi_url})
 
-# from .models import Tutor, Appointment
-
-# def tutor_list(request):
-#     tutors = Tutor.objects.all()
-#     return render(request, 'tutors/tutor_list.html', {'tutors': tutors})
-
-# def appointment_detail(request, appointment_id):
-#     appointment = Appointment.objects.get(id=appointment_id)
-#     return render(request, 'tutors/appointment_detail.html', {'appointment': appointment})
 
