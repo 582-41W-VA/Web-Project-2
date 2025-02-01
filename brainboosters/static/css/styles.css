@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Bureau Regular";
-  src: url("/fonts/Bureau Regular.ttf") format("truetype");
+  src: url("{% static 'fonts/Bureau Regular.ttf' %}") format("truetype");
 }
 * {
   margin: 0;
@@ -365,6 +365,7 @@ section.tutor {
   padding: 56px 0;
   background: #fff;
 }
+
 .tutor .container {
   max-width: 1130px;
 }
@@ -632,12 +633,45 @@ footer .copyright {
     width: 100%;
     text-align: center;
   }
+
+  /* Steps - Start learning in 3 steps */
+  section.steps .card img {
+    width: 190px;
+    height: 190px;
+  }
+  section.steps .cards {
+    gap: 40px;
+  }
+
+  /* Tutor-card */
+  section.tutor-card .cards {
+    gap: 32px;
+  }
 }
 
 /* Burger menu - hidden on desktop */
 @media screen and (min-width: 1025px) {
   .burger-menu {
     display: none;
+  }
+}
+
+/* Responsive size 992 */
+@media only screen and (max-width: 992px) {
+  /* Steps - Start learning in 3 steps */
+  section.steps .card img {
+    width: 170px;
+    height: 170px;
+  }
+
+  /* Tutor-card */
+  section.tutor-card .cards {
+    gap: 24px;
+  }
+
+  section.tutor-card .card img {
+    width: 180px;
+    height: 180px;
   }
 }
 
@@ -725,16 +759,20 @@ footer .copyright {
   section.steps .cards {
     display: flex;
     justify-content: space-between;
-    gap: 40px;
+    gap: 24px;
     flex-wrap: wrap;
   }
 
   section.steps .card {
-    padding: 8px 56px 30px;
+    padding: 8px 16px 30px;
     min-width: 200px;
   }
 
   /* Tutor */
+  section.tutor {
+    padding: 32px 0;
+  }
+
   .tutor-flex {
     display: flex;
     flex-direction: column-reverse;
@@ -761,6 +799,10 @@ footer .copyright {
   }
 
   /* Parents */
+  section.parents {
+    padding: 0px 0;
+  }
+
   .parents-flex {
     flex-direction: column-reverse;
     gap: 20px;
@@ -785,5 +827,151 @@ footer .copyright {
 
   .parents p {
     text-align: center;
+  }
+
+  /* Join us */
+  section.join-us {
+    padding: 40px 0;
+  }
+
+  .join-us h2 {
+    font-size: 22px;
+  }
+
+  /* Tutor Cards */
+  section.tutor-card {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+  section.tutor-card h2 {
+    margin-bottom: 8px;
+  }
+
+  section.tutor-card h4 {
+    margin-top: 16px;
+  }
+
+  section .tutor-card-p {
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+  section.tutor-card .card p {
+    padding: 0 40px;
+  }
+
+  section.tutor-card .cards {
+    gap: 24px;
+  }
+
+  section.tutor-card .card {
+    padding: 24px 6px 24px;
+  }
+
+  section.tutor-card .card img {
+    width: 160px;
+    height: 120px;
+  }
+
+  /* Book a Tutor start */
+  .start .container {
+    max-width: 90%;
+  }
+
+  .start h2 {
+    font-size: 24px;
+  }
+
+  section.start {
+    padding: 32px 0 32px;
+  }
+
+  section.start h2 {
+    margin-bottom: 32px;
+  }
+
+  .start .btn-primary {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    padding: 16px;
+    font-size: 18px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 56px 0;
+  }
+
+  footer .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
+
+  .footer-left {
+    flex: 1;
+    min-width: 150px;
+  }
+
+  .footer-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    min-width: 150px;
+  }
+
+  footer h2 {
+    font-size: 40px;
+  }
+
+  .footer-us {
+    font-size: 22px;
+  }
+
+  .address-container {
+    max-width: 150px;
+  }
+
+  .social-icons {
+    gap: 32px;
+    margin-top: 46px;
+    margin-bottom: 32px;
+  }
+
+  .social-icons a {
+    font-size: 48px;
+  }
+
+  footer .copyright {
+    font-size: 18px;
+  }
+}
+
+/* Responsive size 480 */
+@media (max-width: 480px) {
+  footer {
+    padding: 40px 0;
+  }
+
+  footer .flex {
+    gap: 40px;
+  }
+
+  footer h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .social-icons {
+    gap: 16px;
+    margin-top: 20px;
+    margin-bottom: 28px;
+  }
+
+  footer .copyright {
+    font-size: 14px;
   }
 }
