@@ -1,3 +1,8 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
 <!-- Banner -->
 <section class="banner">
   <div class="container">
@@ -49,7 +54,7 @@
     <h2>Start learning in 3 steps</h2>
     <div class="cards">
       <div class="card">
-        <img src="images/steps_img_sp1.png" alt="Step 1" />
+        <img src="{% static 'images/steps_img_sp1.png' %}" alt="Step 1" />
         <h4>Share your goals</h4>
         <p>
           Let us know what type of tutoring you need and when, so we can find
@@ -57,7 +62,7 @@
         </p>
       </div>
       <div class="card">
-        <img src="images/steps_img_p2.png" alt="Step 2" />
+        <img src="{% static 'images/steps_img_p2.png' %}" alt="Step 2" />
         <h4>Find the perfect fit</h4>
         <p>
           Browse our tutors, get in touch, and book as many free meetings as you
@@ -65,7 +70,7 @@
         </p>
       </div>
       <div class="card">
-        <img src="images/steps_img_s3.png" alt="Step 3" />
+        <img src="{% static 'images/steps_img_s3.png' %}" alt="Step 3" />
         <h4>Learning begin now</h4>
         <p>
           Once you've found the right fit, it's time to book your lessons and
@@ -139,7 +144,7 @@
     </p>
     <div class="cards">
       <div class="card">
-        <img src="images/natalya.jpeg" alt="Tutor Natalya" />
+        <img src="{% static 'images/natalya.jpeg' %}" alt="Tutor Natalya" />
         <h4>Natalya M.</h4>
         <p>
           Let us know what type of tutoring you need and when, so we can find
@@ -147,7 +152,7 @@
         </p>
       </div>
       <div class="card">
-        <img src="images/sharon.jpeg" alt="Tutor Sharon" />
+        <img src="{% static 'images/sharon.jpeg' %}" alt="Tutor Sharon" />
         <h4>Sharon T.</h4>
         <p>
           Let us know what type of tutoring you need and when, so we can find
@@ -155,7 +160,7 @@
         </p>
       </div>
       <div class="card">
-        <img src="images/natasha.jpeg" alt="Tutor Natasha" />
+        <img src="{% static 'images/natasha.jpeg' %}" alt="Tutor Natasha" />
         <h4>Natasha K.</h4>
         <p>
           Let us know what type of tutoring you need and when, so we can find
@@ -178,3 +183,5 @@
   </div>
 </section>
 <!-- end of Book Tutor start -->
+
+{% endblock %}
