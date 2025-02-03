@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Bureau Regular";
-  src: url("/fonts/Bureau Regular.ttf") format("truetype");
+  src: url("/static/css/fonts/Bureau Regular.ttf") format("truetype");
 }
 * {
   margin: 0;
