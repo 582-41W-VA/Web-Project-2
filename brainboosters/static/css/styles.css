@@ -714,6 +714,13 @@ input:-webkit-autofill {
   display: none; 
 }
 
+.user-type-label.active .btn-tutor,
+.user-type-label.active .btn-parent {
+  /* Styles for the active state */
+  background-color: #FF7000;
+  color: #fff;
+}
+
 /* Register page Custom styles for Tutor button */
 .form-container .btn-tutor {
   font-size: 24px;
