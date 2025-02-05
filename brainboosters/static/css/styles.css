@@ -536,7 +536,7 @@ footer .copyright {
 }
 
 .social-icons a {
-  color: #ffa4cb;
+  color: #E95DCC;
   font-size: 62px;
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
   transition: color 0.3s ease-in-out;
@@ -544,6 +544,214 @@ footer .copyright {
 
 .social-icons a:hover {
   color: #10a19d;
+}
+
+/* Log In & Register Pages */
+
+/* Body background Change color Log In & Register Pages */
+body.login-page {
+  background-color: #eae0da;
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; 
+}
+
+/* Stripe Vertical Orange */
+body.login-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 33%;
+  width: 10vw;
+  height: 100%;
+  background-color:  #FF7000;
+  z-index: -1;
+}
+
+/* Stripe Horizontal Yellow */
+body.login-page::after {
+  content: '';
+  position: absolute;
+  top: 34%;
+  left: 0;
+  width: 100%;
+  height: 5vh;
+  background-color: #FFBF00;
+  z-index: -1;
+  transform: translateY(-50%);
+}
+
+/* Navbar change background color Log In & Register pages */
+body.login-page nav {
+  background-color: #f7f2ed;
+}
+
+/* Autofill Fix */
+input:-webkit-autofill {
+  background: #f7f2ed !important;
+  color: white !important;
+  -webkit-box-shadow: 0 0 0 1000px #f7f2ed inset !important;
+  border: 2px solid white;
+} 
+
+/* Input Styles */
+.auth-container input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #000;
+  border-radius: 0;
+  font-size: 16px;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  color: #000;
+}
+
+/* Placeholder Text */
+.auth-container input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Form Container */
+.auth-container {
+  display: flex;
+  background-color: #f7f2ed;
+  padding: 40px 10px 40px 88px;
+  max-width: 780px;
+  margin: 112px auto 56px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex-grow: 1;
+}
+
+/* Form Layout */
+.auth-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.auth-container h2 {
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 24px;
+  text-transform: capitalize;
+}
+
+.auth-container .form-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.auth-container label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-container {
+  text-align: center;
+}
+
+/* Form Section - Left */
+.form-left {
+  width: 50%;
+  text-align: left;
+}
+
+/* Image Section - Right */
+.form-right {
+  width: 50%;
+}
+
+.form-right img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Button Styles */
+.auth-container .btn-primary {
+  margin-top: 48px;
+  padding: 12px 32px;
+  font-size: 24px;
+  font-weight: 400;
+  background-color: #03ccba;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.auth-container .btn-primary:hover {
+  background-color: #10a19d;
+  color: white;
+}
+
+/* Error Message */
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Register Sign In */
+
+/* Style the User Type buttons */
+.user-type-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+/* Hide radio buttons */
+.user-type-buttons input {
+  display: none; 
+}
+
+/* Register page Custom styles for Tutor button */
+.form-container .btn-tutor {
+  font-size: 24px;
+  background-color: #eae0da;
+  color: #000000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  padding: 14px 27px;
+  border: none;
+  border-radius: 7px;
+  font-weight: 400;
+  transition: background-color 0.3s, color 0.3s;
+  outline: none; 
+}
+
+.form-container .btn-tutor:hover {
+  background-color: #d1c7b7;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Button Parent Custom styles  */
+.form-container .btn-parent {
+  font-size: 24px;
+  background-color: #03ccba;
+  color: #000000;
+  padding: 14px 27px;
+  border: none;
+  border-radius: 7px;
+  font-weight: 400;
+  transition: background-color 0.3s, color 0.3s;
+  outline: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.form-container .btn-parent:hover {
+  background-color: #10a19d;
+  color: white;
+  cursor: pointer;
 }
 
 /* Responsive Burger Menu Styles */
@@ -632,12 +840,45 @@ footer .copyright {
     width: 100%;
     text-align: center;
   }
+
+  /* Steps - Start learning in 3 steps */
+  section.steps .card img {
+    width: 190px;
+    height: 190px;
+  }
+  section.steps .cards {
+    gap: 40px;
+  }
+
+  /* Tutor-card */
+  section.tutor-card .cards {
+    gap: 32px;
+  }
 }
 
 /* Burger menu - hidden on desktop */
 @media screen and (min-width: 1025px) {
   .burger-menu {
     display: none;
+  }
+}
+
+/* Responsive size 992 */
+@media only screen and (max-width: 992px) {
+  /* Steps - Start learning in 3 steps */
+  section.steps .card img {
+    width: 170px;
+    height: 170px;
+  }
+
+  /* Tutor-card */
+  section.tutor-card .cards {
+    gap: 24px;
+  }
+
+  section.tutor-card .card img {
+    width: 180px;
+    height: 180px;
   }
 }
 
@@ -785,5 +1026,169 @@ footer .copyright {
 
   .parents p {
     text-align: center;
+  }
+
+  /* Join us */
+  section.join-us {
+    padding: 40px 0;
+  }
+
+  .join-us h2 {
+    font-size: 22px;
+  }
+
+  /* Tutor Cards */
+  section.tutor-card {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+  section.tutor-card h2 {
+    margin-bottom: 8px;
+  }
+
+  section.tutor-card h4 {
+    margin-top: 16px;
+  }
+
+  section .tutor-card-p {
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+  section.tutor-card .card p {
+    padding: 0 40px;
+  }
+
+  section.tutor-card .cards {
+    gap: 24px;
+  }
+
+  section.tutor-card .card {
+    padding: 24px 6px 24px;
+  }
+
+  section.tutor-card .card img {
+    width: 160px;
+    height: 120px;
+  }
+
+  /* Book a Tutor start */
+  .start .container {
+    max-width: 90%;
+  }
+
+  .start h2 {
+    font-size: 24px;
+  }
+
+  section.start {
+    padding: 32px 0 32px;
+  }
+
+  section.start h2 {
+    margin-bottom: 32px;
+  }
+
+  .start .btn-primary {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    padding: 16px;
+    font-size: 18px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 56px 0;
+  }
+
+  footer .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
+
+  .footer-left {
+    flex: 1;
+    min-width: 150px;
+  }
+
+  .footer-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    min-width: 150px;
+  }
+
+  footer h2 {
+    font-size: 40px;
+  }
+
+  .footer-us {
+    font-size: 22px;
+  }
+
+  .address-container {
+    max-width: 150px;
+  }
+
+  .social-icons {
+    gap: 32px;
+    margin-top: 46px;
+    margin-bottom: 32px;
+  }
+
+  .social-icons a {
+    font-size: 48px;
+  }
+
+  footer .copyright {
+    font-size: 18px;
+  }
+
+  /* Button Styles */
+.auth-container .btn-primary {
+  width: 100%;
+}
+
+.form-right img {
+    display: none;
+  }
+
+    .auth-flex {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .form-left, .form-right {
+    width: 100%;
+  }
+}
+
+/* Responsive size 480 */
+@media (max-width: 480px) {
+  footer {
+    padding: 40px 0;
+  }
+
+  footer .flex {
+    gap: 40px;
+  }
+
+  footer h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .social-icons {
+    gap: 16px;
+    margin-top: 20px;
+    margin-bottom: 28px;
+  }
+
+  footer .copyright {
+    font-size: 14px;
   }
 }
