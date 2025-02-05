@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .forms import UserRegisterForm, UserLoginForm
+from .forms import UserRegisterForm, UserLoginForm, TutorSearchForm
 from .models import TutorProfile, ParentProfile
+
 
 
 def homepage(request):
@@ -55,3 +56,32 @@ def user_logout(request):
     logout(request)
     messages.success(request, 'You have been logged out.')
     return redirect('login')
+
+def tutor_search(request):
+    tutors = TutorProfile.objects.select_related('user').all()
+    
+    if request.method == "GET":
+        form = TutorSearchForm(request.GET)
+
+        if form.is_valid():
+            subject = form.cleaned_data.get("subject")
+            level = form.cleaned_data.get("level")
+            price = form.cleaned_data.get("price")
+            gender = form.cleaned_data.get("gender")
+            method = form.cleaned_data.get("filter_method")
+
+            if subject:
+                tutors = tutors.filter(major=subject)  
+            if level is not None:
+                tutors = tutors.filter(degree=level)  
+            if price is not None:
+                tutors = tutors.filter(hourly_rate=price)
+            if gender is not None:
+                tutors = tutors.filter(gender=gender) 
+            if method is not None:
+                tutors = tutors.filter(method=method) 
+
+    else:
+        form = TutorSearchForm()
+
+    return render(request, 'brainboosters/search.html', {"form": form, "tutors": tutors})

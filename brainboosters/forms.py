@@ -24,3 +24,11 @@ class UserRegisterForm(UserCreationForm):
 class UserLoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Username'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
+
+
+class TutorSearchForm(forms.Form):     
+    subject = forms.CharField(required=False, label="Subject")
+    level = forms.CharField(required=False, label="CharField")
+    price = forms.DecimalField(required=False, label="Price")
+    gender = forms.CharField(required=False, label="Gender")
+    method = forms.CharField(required=False, label="Method")
