@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from .models import User
+from .models import ParentProfile, TutorProfile, User
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField(required=True)
@@ -24,3 +24,21 @@ class UserRegisterForm(UserCreationForm):
 class UserLoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Username'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
+
+
+class TutorProfileForm(forms.ModelForm):
+    name = forms.CharField(required=True)
+    profile_picture = forms.ImageField(required=False)
+
+    class Meta:
+        model = TutorProfile
+        fields = ['name', 'gender', 'degree', 'school', 'major', 'experience', 'method', 'hourly_rate', 'description']
+
+
+class ParentProfileForm(forms.ModelForm):
+    name = forms.CharField(required=True)
+    profile_picture = forms.ImageField(required=False)
+
+    class Meta:
+        model = ParentProfile
+        fields = ['name', 'location', 'child_name', 'child_age', 'child_grade']

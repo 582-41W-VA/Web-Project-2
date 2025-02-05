@@ -29,6 +29,9 @@
       <div class="auth-buttons">
         {% if user.is_authenticated %}
           <p>Welcome, {{ user.username }}!</p>
+          <a href="{% if user.user_type == 'parent' %}{% url 'parent_dashboard' %}{% else %}{% url 'tutor_dashboard' %}{% endif %}" class="btn btn-primary">
+            Dashboard
+          </a>
           <a href="{% url 'logout' %}" class="btn btn-secondary">Log out</a>
       {% else %}
           <a href="{% url 'login' %}" class="btn btn-secondary">Log in</a>

@@ -59,5 +59,18 @@ document.addEventListener("DOMContentLoaded", function () {
       burgerMenu.classList.remove("active");
     }
   });
+
+  const userTypeLabels = document.querySelectorAll('.user-type-label');
+
+  userTypeLabels.forEach(label => {
+    label.addEventListener('click', function() {
+      // Remove 'active' class from all labels
+      userTypeLabels.forEach(lbl => lbl.classList.remove('active'));
+
+      // Add 'active' class to the clicked label
+      this.classList.add('active');
+    });
+  });
+
 });
 // Responsive Menu End
