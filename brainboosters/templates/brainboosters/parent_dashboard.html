@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Tutor Dashboard{% endblock %}
+
+{% block content %}
+
+<h2>Parent Dashboard</h2>
+
+{% if parent_profile.user.profile_picture %}
+    <img src="{{ parent_profile.user.profile_picture.url }}" alt="Profile Picture" width="150">
+{% else %}
+    <img src="{% static 'images/no-image.jpg' %}" alt="No Profile Picture" width="150">
+{% endif %}
+<p>Name: {{ parent_profile.name }}</p>
+<p>Location: {{ parent_profile.location }}</p>
+<p>Child Name: {{ parent_profile.child_name }}</p>
+<p>Child Age: {{ parent_profile.child_age }}</p>
+<p>Child Grade: {{ parent_profile.child_grade }}</p>
+
+{% endblock %}
