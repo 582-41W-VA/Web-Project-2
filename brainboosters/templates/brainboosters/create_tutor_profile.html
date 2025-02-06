@@ -1,12 +1,73 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Create Tutor Profile{% endblock %}
 
 {% block content %}
-<h2>Create Tutor Profile</h2>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save Profile</button>
-</form>
+<body class="login-page">
+    <div class="auth-container tutor-profile">
+        <div class="form-container profile-page create-tutor-profile">
+            <h2>Create Tutor Profile</h2>
+            <!-- Form for Creating Tutor Profile -->
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="form-section">
+                    <!-- Name Input Field -->
+                    <div class="form-group">
+                        <label for="{{ form.name.id_for_label }}">Name:</label>
+                        {{ form.name }}
+                    </div>
+                    <!-- Gender Selection -->
+                    <div class="form-group">
+                        <label for="{{ form.gender.id_for_label }}">Gender:</label>
+                        {{ form.gender }}
+                    </div>
+                    <!-- Degree Input -->
+                    <div class="form-group">
+                        <label for="{{ form.degree.id_for_label }}">Degree:</label>
+                        {{ form.degree }}
+                    </div>
+                    <!-- School Input -->
+                    <div class="form-group">
+                        <label for="{{ form.school.id_for_label }}">School:</label>
+                        {{ form.school }}
+                    </div>
+                    <!-- Major Input -->
+                    <div class="form-group">
+                        <label for="{{ form.major.id_for_label }}">Major:</label>
+                        {{ form.major }}
+                    </div>
+                    <!-- Experience Input -->
+                    <div class="form-group">
+                        <label for="{{ form.experience.id_for_label }}">Experience:</label>
+                        {{ form.experience }}
+                    </div>
+                    <!-- Teaching Method Select -->
+                    <div class="form-group">
+                        <label for="{{ form.method.id_for_label }}">Method:</label>
+                        {{ form.method }}
+                    </div>
+                    <!-- Hourly Rate Input -->
+                    <div class="form-group">
+                        <label for="{{ form.hourly_rate.id_for_label }}">Hourly Rate:</label>
+                        {{ form.hourly_rate }}
+                    </div>
+                    <!-- Description Textarea -->
+                    <div class="form-group">
+                        <label for="{{ form.description.id_for_label }}">Description:</label>
+                        {{ form.description }}
+                    </div>
+                    <!-- Profile Picture Upload -->
+                    <div class="form-group">
+                        <label for="{{ form.profile_picture.id_for_label }}">Profile Picture</label>
+                        {{ form.profile_picture }}
+                    </div>
+                    <!-- Save Profile Button -->
+                    <button type="submit" class="btn-primary">Save Profile</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
 {% endblock %}
