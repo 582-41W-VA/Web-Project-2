@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
-from django.views.generic.edit import UpdateView
+from django.core.exceptions import ObjectDoesNotExist
 from .forms import ParentProfileForm, TutorProfileForm, UserRegisterForm, UserLoginForm
 from .models import TutorProfile, ParentProfile
 
@@ -110,8 +110,11 @@ def tutor_dashboard(request):
         return redirect('home')  # Redirect non-tutors to the home page
 
     # Fetch the tutor's profile
-    tutor_profile = TutorProfile.objects.get(user=request.user)
-    return render(request, 'brainboosters/tutor_dashboard.html', {'tutor_profile': tutor_profile})
+    try:
+        tutor_profile = TutorProfile.objects.get(user=request.user)
+        return render(request, 'brainboosters/tutor_dashboard.html', {'tutor_profile': tutor_profile})
+    except ObjectDoesNotExist:
+        return redirect('create_tutor_profile')
 
 
 @login_required
@@ -121,8 +124,11 @@ def parent_dashboard(request):
         return redirect('home')  # Redirect non-parents to the home page
 
     # Fetch the parent's profile
-    parent_profile = ParentProfile.objects.get(user=request.user)
-    return render(request, 'brainboosters/parent_dashboard.html', {'parent_profile': parent_profile})
+    try:
+        parent_profile = ParentProfile.objects.get(user=request.user)
+        return render(request, 'brainboosters/parent_dashboard.html', {'parent_profile': parent_profile})
+    except ObjectDoesNotExist:
+        return redirect('create_parent_profile')
 
 
 @login_required
