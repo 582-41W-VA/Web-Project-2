@@ -632,6 +632,7 @@ input:-webkit-autofill {
   justify-content: space-between;
   align-items: center;
   gap: 40px;
+  padding: 30px 0;
 }
 
 .auth-container h2 {
@@ -718,7 +719,7 @@ input:-webkit-autofill {
 .user-type-label.active .btn-tutor,
 .user-type-label.active .btn-parent {
   /* Styles for the active state */
-  background-color: #ff7000;
+  background-color: #03ccba;
   color: #fff;
 }
 
@@ -736,11 +737,11 @@ input:-webkit-autofill {
   outline: none;
 }
 
-.user-type-buttons .btn-tutor:hover {
+/*.user-type-buttons .btn-tutor:hover {
   background-color: #d1c7b7;
   color: #ffffff;
   cursor: pointer;
-}
+}*/
 
 /* Button Parent Custom styles  */
 .user-type-buttons .btn-parent {
@@ -756,11 +757,11 @@ input:-webkit-autofill {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-.user-type-buttons .btn-parent:hover {
+/*.user-type-buttons .btn-parent:hover {
   background-color: #10a19d;
   color: white;
   cursor: pointer;
-}
+}*/
 
 /* Styling for create-parent-profile page */
 .create-parent-profile-page .form-flex {

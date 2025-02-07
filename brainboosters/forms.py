@@ -9,7 +9,18 @@ class UserRegisterForm(UserCreationForm):
         ('tutor', 'Tutor'),
         ('parent', 'Parent'),
     ]
-    user_type = forms.ChoiceField(choices=USER_TYPE_CHOICES, widget=forms.RadioSelect)
+    user_type = forms.ChoiceField(choices=USER_TYPE_CHOICES, widget=forms.RadioSelect, required=True)
+
+    password1 = forms.CharField(
+        label='Password',
+        widget=forms.PasswordInput,
+        help_text='Your password must be at least 8 characters long and contain both letters and numbers.'
+    )
+    password2 = forms.CharField(
+        label='Confirm Password',
+        widget=forms.PasswordInput,
+        help_text='Enter the same password as above, for verification.'
+    )
 
     class Meta:
         model = User
@@ -29,6 +40,26 @@ class UserLoginForm(AuthenticationForm):
 class TutorProfileForm(forms.ModelForm):
     name = forms.CharField(required=True)
     profile_picture = forms.ImageField(required=False)
+    GENDER_CHOICES = [
+        ('M', 'Male'),
+        ('F', 'Female'),
+    ]
+
+    DEGREE_CHOICES = [
+        ('bachelor', 'Bachelor'),
+        ('master', 'Master'),
+        ('doctor', 'Doctor'),
+    ]
+
+    METHOD_CHOICES = [
+        ('online', 'Online'),
+        ('in_person', 'In Person'),
+        ('hybrid', 'Hybrid'),
+    ]
+
+    gender = forms.ChoiceField(choices=GENDER_CHOICES, required=True, widget=forms.Select(attrs={'class': 'form-control'}))
+    degree = forms.ChoiceField(choices=DEGREE_CHOICES, required=True)
+    method = forms.ChoiceField(choices=METHOD_CHOICES, required=True)
 
     class Meta:
         model = TutorProfile

@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
+from django.views.generic.edit import UpdateView
 from .forms import ParentProfileForm, TutorProfileForm, UserRegisterForm, UserLoginForm
 from .models import TutorProfile, ParentProfile
 
@@ -122,3 +123,45 @@ def parent_dashboard(request):
     # Fetch the parent's profile
     parent_profile = ParentProfile.objects.get(user=request.user)
     return render(request, 'brainboosters/parent_dashboard.html', {'parent_profile': parent_profile})
+
+
+@login_required
+def edit_tutor_profile(request, pk):
+    profile = get_object_or_404(TutorProfile, pk=pk, user=request.user)
+    if request.method == 'POST':
+        form = TutorProfileForm(request.POST, instance=profile)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.user = request.user
+            profile.save()
+
+            # Handle the profile picture (saved to the User model)
+            if 'profile_picture' in request.FILES:
+                request.user.profile_picture = request.FILES['profile_picture']
+                request.user.save()
+
+            return redirect('tutor_dashboard')
+    else:
+        form = TutorProfileForm(instance=profile)
+    return render(request, 'brainboosters/edit_tutor_profile.html', {'form': form})
+
+
+@login_required
+def edit_parent_profile(request, pk):
+    profile = get_object_or_404(ParentProfile, pk=pk, user=request.user)
+    if request.method == 'POST':
+        form = ParentProfileForm(request.POST, instance=profile)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.user = request.user
+            profile.save()
+
+            # Handle the profile picture (saved to the User model)
+            if 'profile_picture' in request.FILES:
+                request.user.profile_picture = request.FILES['profile_picture']
+                request.user.save()
+
+            return redirect('parent_dashboard')
+    else:
+        form = ParentProfileForm(instance=profile)
+    return render(request, 'brainboosters/edit_parent_profile.html', {'form': form})
