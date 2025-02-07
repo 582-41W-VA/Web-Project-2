@@ -23,7 +23,7 @@ class User(AbstractUser):
 class TutorProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='tutor_profile')
     name = models.CharField(max_length=80, null=True, blank=True)
-    gender = models.CharField(max_length=10, choices=[('men', 'Men'),('women', 'Women')], null=True, blank=True)
+    gender = models.CharField(max_length=10, choices=[('M', 'Male'), ('F', 'Female')], null=True, blank=True)
     degree = models.CharField(
         max_length=10, 
         choices=[
@@ -34,12 +34,12 @@ class TutorProfile(models.Model):
         null=True, 
         blank=True
     )
-    school = models.TextField(null=True, blank=True)
-    major = models.TextField(null=True, blank=True)
-    experience = models.TextField(null=True, blank=True)
-    method = models.CharField(max_length=20, choices=[('in_person', 'In Person'), ('online', 'Online')], null=True, blank=True)
+    school = models.CharField(max_length=100, null=True, blank=True)
+    major = models.CharField(max_length=100, null=True, blank=True)
+    experience = models.CharField(max_length=100, null=True, blank=True)
+    method = models.CharField(max_length=20, choices=[('in_person', 'In Person'), ('online', 'Online'), ('hybrid', 'Hybrid'),], null=True, blank=True)
     hourly_rate = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
-    description = models.TextField(null=True, blank=True)
+    description = models.CharField(max_length=300, null=True, blank=True)
 
     def __str__(self):
         return self.user.username

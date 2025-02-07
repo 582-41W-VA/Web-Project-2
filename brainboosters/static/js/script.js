@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const userTypeLabels = document.querySelectorAll('.user-type-label');
+/*  const userTypeLabels = document.querySelectorAll('.user-type-label');
 
   userTypeLabels.forEach(label => {
     label.addEventListener('click', function() {
@@ -70,6 +70,18 @@ document.addEventListener("DOMContentLoaded", function () {
       // Add 'active' class to the clicked label
       this.classList.add('active');
     });
+  });*/
+  const userTypeInputs = document.querySelectorAll('input[name="user_type"]');
+  userTypeInputs.forEach(input => {
+      if (input.checked) {
+          input.parentElement.classList.add('active');
+      }
+      input.addEventListener('change', function() {
+          userTypeInputs.forEach(inp => inp.parentElement.classList.remove('active'));
+          if (this.checked) {
+              this.parentElement.classList.add('active');
+          }
+      });
   });
 
 });
