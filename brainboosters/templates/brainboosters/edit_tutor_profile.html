@@ -1,27 +1,27 @@
 {% extends 'base.html' %}
 
+{% block body_class %}Edit-Tutor-Profile{% endblock %}
+
 {% block content %}
-<body class="login-page">
-  <div class="auth-container tutor-profile">
-      <div class="form-container profile-page create-tutor-profile">
-          <h2>Edit Tutor Profile</h2>
-          <form method="post" enctype="multipart/form-data">
-              {% csrf_token %}
-              {% for field in form %}
-                  <div class="form-group">
-                      <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                      {{ field }}
-                      {% if field.help_text %}
-                          <small class="form-text text-muted">{{ field.help_text }}</small>
-                      {% endif %}
-                      {% for error in field.errors %}
-                          <div class="alert alert-danger">{{ error }}</div>
-                      {% endfor %}
-                  </div>
-              {% endfor %}
-              <button type="submit" class="btn btn-primary">Save Changes</button>
-          </form>
-      </div>
+<div class="auth-container tutor-profile">
+    <div class="form-container profile-page create-tutor-profile">
+        <h2>Edit Tutor Profile</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.help_text %}
+                        <small class="form-text text-muted">{{ field.help_text }}</small>
+                    {% endif %}
+                    {% for error in field.errors %}
+                        <div class="alert alert-danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
     </div>
-</body>
+</div>
 {% endblock %}
