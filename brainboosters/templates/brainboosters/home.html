@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Banner -->
+<section class="banner">
+  <div class="container">
+    <div class="banner-flex">
+      <!-- left side -->
+      <div class="left">
+        <h1>Online tutoring that releases potential</h1>
+        <p>
+          We can’t stop you worrying about your child. But our expert tutors can
+          help their grades and confidence soar - and help you worry a little
+          less.
+        </p>
+        <a href="#" class="btn btn-primary">Get started</a>
+      </div>
+      <!-- right side -->
+      <div class="right"></div>
+    </div>
+  </div>
+</section>
+<!-- end of Banner  -->
+
+<!-- About -->
+<section class="about">
+  <div class="container">
+    <div class="about-flex">
+      <!-- left side -->
+      <div class="left">
+        <h2>About us</h2>
+        <p>
+          Brain Boosters is a community of passionate teachers who’ve come
+          together to create an app that makes finding the perfect tutor simple
+          and stress-free. Whether your child needs help catching up, preparing
+          for exams, or just wants to explore a new subject, the goal of Brain
+          Boosters is to connect parents with experienced tutors nearby. It’s
+          all about bringing quality education closer to home and making
+          learning accessible, personal, and effective for every family.
+        </p>
+      </div>
+      <!-- right side -->
+      <div class="right"></div>
+    </div>
+  </div>
+</section>
+<!-- end of About  -->
+
+<!-- Start learning in 3 steps -->
+<section class="steps">
+  <div class="container">
+    <h2>Start learning in 3 steps</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="{% static 'images/steps_img_sp1.png' %}" alt="Step 1" />
+        <h4>Share your goals</h4>
+        <p>
+          Let us know what type of tutoring you need and when, so we can find
+          you the right matches for your needs.
+        </p>
+      </div>
+      <div class="card">
+        <img src="{% static 'images/steps_img_p2.png' %}" alt="Step 2" />
+        <h4>Find the perfect fit</h4>
+        <p>
+          Browse our tutors, get in touch, and book as many free meetings as you
+          need to find the tutor they click with most.
+        </p>
+      </div>
+      <div class="card">
+        <img src="{% static 'images/steps_img_s3.png' %}" alt="Step 3" />
+        <h4>Learning begin now</h4>
+        <p>
+          Once you’ve found the right fit, it’s time to book your lessons and
+          start learning with Brain Boosters.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end of Start learning in 3 steps -->
+
+<!-- Tutor -->
+<section class="tutor">
+  <div class="container">
+    <div class="tutor-flex">
+      <!-- right side (image) -->
+      <div class="left"></div>
+      <!-- left side (text) -->
+      <div class="right">
+        <h2>Personalized Learning for Every Child</h2>
+        <p>
+          Our teachers know that every student is different—there’s no
+          one-size-fits-all approach here! With over 10 years of experience
+          teaching kids of all ages, our expert tutors use the latest teaching
+          methods and adapt their lessons to fit your child’s unique needs.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end of Tutor -->
+
+<!-- Parents -->
+<section class="parents">
+  <div class="container">
+    <div class="parents-flex">
+      <!-- left side -->
+      <div class="left">
+        <h2>Trusted by parents</h2>
+        <p>
+          Parents trust our teachers because they’re not just experts—they
+          genuinely care about each child’s progress. With years of experience
+          and a flexible teaching style, they know how to keep kids engaged and
+          motivated. They take the time to understand each student’s strengths
+          and challenges, creating a supportive and encouraging learning
+          environment. It’s no surprise that so many parents feel confident
+          knowing their child is in good hands!
+        </p>
+      </div>
+      <!-- right side -->
+      <div class="right"></div>
+    </div>
+  </div>
+</section>
+<!-- end of Parents  -->
+
+<!-- Join-us  -->
+<section class="join-us">
+  <div class="container text-center">
+    <h2>Our interactive learning space makes lessons engaging</h2>
+  </div>
+</section>
+<!-- end of Join-us  -->
+
+<!-- Tutor Cards -->
+<section class="tutor-card">
+  <div class="container">
+    <h2>Our Awesome Teachers</h2>
+    <p class="tutor-card-p">
+      Thousands of parents, students, and teachers have rated us 4.96/5
+    </p>
+    <div class="cards">
+      {% for tutor in tutors %}
+      <article class="card">
+        {% if tutor.user.profile_picture %}
+          <img src="{{ tutor.user.profile_picture.url }}" alt="Tutor {{ tutor.name }}">
+        {% else %}
+          <img src="{% static 'images/default-profile.png' %}" alt="Default Tutor Image">
+        {% endif %}
+        <h4>{{ tutor.name }}</h4>
+        <p>{{ tutor.description|default:"Experienced tutor ready to help you succeed!" }}</p>
+        <p><strong>Experience:</strong> {{ tutor.experience|default:"Not provided" }}</p>
+        <p><strong>Method:</strong> {{ tutor.get_method_display }}</p>
+        <p><strong>Hourly Rate:</strong> ${{ tutor.hourly_rate|default:"N/A" }}</p>
+      </article>
+      {% empty %}
+      <p>No tutors available at the moment. Check back soon!</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- end of Tutor cards -->
+
+<!-- Book Tutor start-->
+<section class="start">
+  <div class="container">
+    <h2>
+      Book a free meeting with a tutor today and find out how they can help your
+      child
+    </h2>
+    <a href="#" class="btn btn-primary">Book Tutor</a>
+  </div>
+</section>
+<!-- end of Book Tutor start -->
+
+{% endblock %}

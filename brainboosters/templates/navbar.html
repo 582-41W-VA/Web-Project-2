@@ -1,0 +1,43 @@
+{% load static %}
+<nav>
+    <div class="container flex">
+      <div class="logo-and-nav">
+        <div class="logo">
+          <img src="{% static 'images/logo1.png' %}" alt="Brain Boosters" />
+        </div>
+        <div class="nav-items">
+          <ul>
+            <li><a href="{% url 'homepage' %}">Home</a></li>
+            <li class="dropdown">
+              <a href="#"
+                >Subjects <i class="fa-solid fa-caret-down caret-icon"></i
+              ></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">English</a></li>
+                <li><a href="#">French</a></li>
+                <li><a href="#">Math</a></li>
+                <li><a href="#">Science</a></li>
+                <li><a href="#">Chemistry</a></li>
+              </ul>
+            </li>
+            <li class="become-tutor">
+              <a href="{% url 'register' %}?user_type=tutor" class="btn btn-tutor">Become a tutor</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="auth-buttons">
+        {% if user.is_authenticated %}
+          <p>Welcome, {{ user.username }}!</p>
+          <a href="{% if user.user_type == 'parent' %}{% url 'parent_dashboard' %}{% else %}{% url 'tutor_dashboard' %}{% endif %}" class="btn btn-primary">
+            Dashboard
+          </a>
+          <a href="{% url 'logout' %}" class="btn btn-secondary">Log out</a>
+      {% else %}
+          <a href="{% url 'login' %}" class="btn btn-secondary">Log in</a>
+          <a href="{% url 'register' %}" class="btn btn-primary">Sign up</a>
+      {% endif %}
+      </div>
+    </div>
+  </nav>
+  

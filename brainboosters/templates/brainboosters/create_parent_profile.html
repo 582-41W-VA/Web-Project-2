@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Create Parent Profile{% endblock %}
+
+{% block content %}
+<body class="login-page">
+    <div class="auth-container">
+        <div class="form-container">
+            <h2>Create Parent Profile</h2>
+
+            <div class="auth-flex">
+                <!-- Form Section -->
+                <div class="form-left">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        
+                        <!-- Name -->
+                        <div class="form-group">
+                            <label for="{{ form.name.id_for_label }}">Name:</label>
+                            {{ form.name }}
+                            {% if form.name.errors %}
+                                <p class="error">{{ form.name.errors }}</p>
+                            {% endif %}
+                        </div>
+
+                        <!-- Location -->
+                        <div class="form-group">
+                            <label for="{{ form.location.id_for_label }}">Location:</label>
+                            {{ form.location }}
+                            {% if form.location.errors %}
+                                <p class="error">{{ form.location.errors }}</p>
+                            {% endif %}
+                        </div>
+
+                        <!-- Child Name -->
+                        <div class="form-group">
+                            <label for="{{ form.child_name.id_for_label }}">Child Name:</label>
+                            {{ form.child_name }}
+                            {% if form.child_name.errors %}
+                                <p class="error">{{ form.child_name.errors }}</p>
+                            {% endif %}
+                        </div>
+
+                        <!-- Child Age -->
+                        <div class="form-group">
+                            <label for="{{ form.child_age.id_for_label }}">Child Age:</label>
+                            {{ form.child_age }}
+                            {% if form.child_age.errors %}
+                                <p class="error">{{ form.child_age.errors }}</p>
+                            {% endif %}
+                        </div>
+
+                        <!-- Child Grade -->
+                        <div class="form-group">
+                            <label for="{{ form.child_grade.id_for_label }}">Child Grade:</label>
+                            {{ form.child_grade }}
+                            {% if form.child_grade.errors %}
+                                <p class="error">{{ form.child_grade.errors }}</p>
+                            {% endif %}
+                        </div>
+
+                        <!-- Profile Picture -->
+                        <div class="form-group">
+                            <label for="{{ form.profile_picture.id_for_label }}">Profile Picture:</label>
+                            {{ form.profile_picture }}
+                            {% if form.profile_picture.errors %}
+                                <p class="error">{{ form.profile_picture.errors }}</p>
+                            {% endif %}
+                            <p class="file-upload-text"></p>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Save Profile</button>
+                    </form>
+                </div>
+
+                <!-- Image Section -->
+                <div class="form-right">
+                    <img src="{% static 'images/parent.png' %}" alt="Parent Profile Image">
+                </div>
+            </div> 
+        </div> 
+    </div>
+</body>
+{% endblock %}
