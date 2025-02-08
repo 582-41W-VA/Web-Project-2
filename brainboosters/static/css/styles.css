@@ -1297,6 +1297,39 @@ input:-webkit-autofill {
   }
 }
 
+
+.filters {
+  padding: 20px 0;
+  line-height: 1.8;
+}
+
+.filters label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.filters select,
+.filters input[type="text"],
+.filters button {
+  width: 70%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.filters button {
+  background-color: #03ccba;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  background-color: #10a19d;
+  
 /* Responsive size 480 */
 @media (max-width: 480px) {
   footer {
@@ -1321,4 +1354,5 @@ input:-webkit-autofill {
   footer .copyright {
     font-size: 14px;
   }
+
 }

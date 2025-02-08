@@ -1,12 +1,14 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist
-from .forms import ParentProfileForm, TutorProfileForm, UserRegisterForm, UserLoginForm
+from .forms import ParentProfileForm, TutorProfileForm, UserRegisterForm, UserLoginForm,TutorSearchForm
 from .models import TutorProfile, ParentProfile
 import random
 from django.shortcuts import render
 from .models import TutorProfile
+
 
 def homepage(request):
     tutors = list(TutorProfile.objects.select_related('user').all())  # Convert queryset to a list
@@ -57,6 +59,35 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return redirect('login')
+
+def tutor_search(request):
+    tutors = TutorProfile.objects.select_related('user').all()
+    
+    if request.method == "GET":
+        form = TutorSearchForm(request.GET)
+
+        if form.is_valid():
+            subject = form.cleaned_data.get("subject")
+            level = form.cleaned_data.get("level")
+            price = form.cleaned_data.get("price")
+            gender = form.cleaned_data.get("gender")
+            method = form.cleaned_data.get("filter_method")
+
+            if subject:
+                tutors = tutors.filter(major=subject)  
+            if level is not None:
+                tutors = tutors.filter(degree=level)  
+            if price is not None:
+                tutors = tutors.filter(hourly_rate=price)
+            if gender is not None:
+                tutors = tutors.filter(gender=gender) 
+            if method is not None:
+                tutors = tutors.filter(method=method) 
+
+    else:
+        form = TutorSearchForm()
+
+    return render(request, 'brainboosters/search.html', {"form": form, "tutors": tutors})
 
 
 @login_required
@@ -175,3 +206,4 @@ def edit_parent_profile(request, pk):
     else:
         form = ParentProfileForm(instance=profile)
     return render(request, 'brainboosters/edit_parent_profile.html', {'form': form})
+
