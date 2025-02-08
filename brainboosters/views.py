@@ -4,11 +4,15 @@ from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 from .forms import ParentProfileForm, TutorProfileForm, UserRegisterForm, UserLoginForm
 from .models import TutorProfile, ParentProfile
-
+import random
+from django.shortcuts import render
+from .models import TutorProfile
 
 def homepage(request):
-    tutors = TutorProfile.objects.select_related('user').all()
-    return render(request, 'brainboosters/home.html', {'tutors': tutors})
+    tutors = list(TutorProfile.objects.select_related('user').all())  # Convert queryset to a list
+    random_tutors = random.sample(tutors, 3) if len(tutors) >= 3 else tutors  # Pick 3 random tutors
+    
+    return render(request, 'brainboosters/home.html', {'tutors': random_tutors})
 
 
 def register(request):
