@@ -1,12 +1,91 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}Register{% endblock %}
 
 {% block content %}
-<h2>Register</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Register</button>
-</form>
+  <body class="login-page">
+    <div class="auth-container">
+      <div class="form-container">
+        <h2>Sign up</h2>
+
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <!-- User Type -->
+          <div class="user-type-buttons">
+            {% for radio in form.user_type %}
+            <label class="user-type-label" for="{{ radio.id_for_label }}">
+              {{ radio.tag }}
+              {% if radio.choice_label == "Tutor" %}
+                <span class="btn-tutor">{{ radio.choice_label }}</span>
+              {% else %}
+                <span class="btn-tutor">{{ radio.choice_label }}</span>
+              {% endif %}
+            </label>
+            {% endfor %}
+          </div>
+
+          <div class="auth-flex">
+            <!-- Left Form -->
+            <div class="form-left">
+              <!-- Errors -->
+              {% if form.errors %}
+              <div class="error-message">
+                <p><strong>Please correct the following:</strong></p>
+                <ul>
+                  {% for field in form %}
+                    {% for error in field.errors %}
+                      <li>{{ error }}</li>
+                    {% endfor %}
+                  {% endfor %}
+                </ul>
+              </div>
+              {% endif %}
+
+                
+                <!-- Username -->
+                <div class="form-group">
+                    <label for="{{ form.username.id_for_label }}">Username</label>
+                    {{ form.username }}
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="{{ form.email.id_for_label }}">Email</label>
+                    {{ form.email }}
+                </div>
+
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label for="{{ form.password1.id_for_label }}">Password</label>
+                    {{ form.password1 }}
+                    {% if form.password1.help_text %}
+                        <small class="form-text text-muted">{{ form.password1.help_text }}</small>
+                    {% endif %}
+                </div>
+
+                <!-- Password Confirmation Field -->
+                <div class="form-group">
+                    <label for="{{ form.password2.id_for_label }}">Confirm Password</label>
+                    {{ form.password2 }}
+                    {% if form.password2.help_text %}
+                      <small class="form-text text-muted">{{ form.password2.help_text }}</small>
+                    {% endif %}
+                </div>
+
+                <button type="submit" class="btn-primary">Register</button>
+              
+            </div>
+
+            <!-- Right side: Image -->
+            <div class="form-right">
+              <img
+                src="{% static 'images/future_science_img.png' %}"
+                alt="Register Image"
+              />
+            </div>
+          </div>
+      </form>
+      </div>
+    </div>
+  </body>
 {% endblock %}
