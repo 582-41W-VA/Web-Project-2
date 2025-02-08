@@ -1,0 +1,10 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}meeting{% endblock %}
+
+{% block content %}
+  <body class="meeting-page">
+    <iframe src="{{ jitsi_url }}" width="100%" height="700px" allow="camera; microphone; fullscreen; display-capture;"></iframe>
+  </body>
+{% endblock %}
