@@ -11,14 +11,12 @@
           <!-- Left side: -->
           <div class="form-left">
             <!-- errors -->
-            {% if form.errors %}
+            {% if form.non_field_errors %}
             <div class="error-message">
               <p><strong>Please correct the following:</strong></p>
               <ul>
-                {% for field in form %}
-                  {% for error in field.errors %}
-                    <li>{{ error }}</li>
-                  {% endfor %}
+                {% for error in form.non_field_errors %}
+                  <li>{{ error }}</li>
                 {% endfor %}
               </ul>
             </div>
