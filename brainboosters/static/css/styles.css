@@ -549,7 +549,14 @@ footer .copyright {
 /* Log In & Register Pages */
 
 /* Body background Change color Log In & Register Pages */
-body.login-page {
+body.Edit-Tutor-Profile,
+body.Edit-Parent-Profile,
+body.Parent-Dashboard,
+body.Create-Parent-Profile,
+body.Tutor-Dashboard,
+body.Create-Tutor-Profile,
+body.Register,
+body.Login {
   background-color: #eae0da;
   position: relative;
   overflow-x: hidden;
@@ -559,7 +566,14 @@ body.login-page {
 }
 
 /* Stripe Vertical Orange */
-body.login-page::before {
+body.Edit-Tutor-Profile::before,
+body.Edit-Parent-Profile::before,
+body.Parent-Dashboard::before,
+body.Create-Parent-Profile::before,
+body.Tutor-Dashboard::before,
+body.Create-Tutor-Profile::before,
+body.Register::before,
+body.Login::before {
   content: "";
   position: absolute;
   top: 0;
@@ -571,7 +585,14 @@ body.login-page::before {
 }
 
 /* Stripe Horizontal Yellow */
-body.login-page::after {
+body.Edit-Tutor-Profile::after,
+body.Edit-Parent-Profile::after,
+body.Parent-Dashboard::after,
+body.Create-Parent-Profile::after,
+body.Tutor-Dashboard::after,
+body.Create-Tutor-Profile::after,
+body.Register::after,
+body.Login::after {
   content: "";
   position: absolute;
   top: 34%;
@@ -581,6 +602,18 @@ body.login-page::after {
   background-color: #ffbf00;
   z-index: -1;
   transform: translateY(-50%);
+}
+
+/* Navbar change background color Log In & Register pages */
+body.Edit-Tutor-Profile nav,
+body.Edit-Parent-Profile nav,
+body.Parent-Dashboard nav,
+body.Create-Parent-Profile nav,
+body.Tutor-Dashboard nav,
+body.Create-Tutor-Profile nav,
+body.Register nav,
+body.Login nav {
+  background-color: #f7f2ed;
 }
 
 /* Navbar change background color Log In & Register pages */
@@ -1264,6 +1297,39 @@ input:-webkit-autofill {
   }
 }
 
+
+.filters {
+  padding: 20px 0;
+  line-height: 1.8;
+}
+
+.filters label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.filters select,
+.filters input[type="text"],
+.filters button {
+  width: 70%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.filters button {
+  background-color: #03ccba;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  background-color: #10a19d;
+  
 /* Responsive size 480 */
 @media (max-width: 480px) {
   footer {
@@ -1288,4 +1354,5 @@ input:-webkit-autofill {
   footer .copyright {
     font-size: 14px;
   }
+
 }

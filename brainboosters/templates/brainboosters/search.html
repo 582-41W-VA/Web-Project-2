@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}search{% endblock %}
+
+{% block content %}
+<!-- filters -->
+<section class="filters">
+    <div class="container">
+      <form method="GET" action="{% url 'tutor_search' %}">
+        {% csrf_token %}
+        <div>
+            <label for="id_subject">Subject:</label>
+            <select name="subject" id="id_subject">
+                <option value="">Select Subject</option>
+                <option value="English">English</option>
+                <option value="French">French</option>
+                <option value="Math">Math</option>            
+                <option value="Science">Science</option>
+                <option value="Chemistry">Chemistry</option>
+            </select>
+        </div>
+  
+        <div>
+            <label for="id_level">Level:</label>
+            <select name="level" id="id_level">
+                <option value="">Select Level</option>
+                <option value="Kindergarten">Kindergarten</option>
+                <option value="Primary Education">Primary Education</option>
+                <option value=" Secondary Education"> Secondary Education</option>
+                <option value="Cegep">Cegep</option>
+                <option value="University">University</option>
+            </select>
+        </div>
+  
+        <div>
+            <label for="id_price">Price:</label>
+            <select name="price" id="id_price">
+                <option value="">Select Price</option>
+                <option value="20-29">20-29</option>
+                <option value="30-39">30-39</option>
+                <option value="40-49">40-49</option>
+                <option value="50-59">50-59</option>
+                <option value="60-69">60-69</option>
+                <option value="70-99">70-99</option>
+            </select>
+        </div>
+  
+        <div>
+            <label for="id_gender">Gender:</label>
+            <select name="gender" id="id_gender">
+                <option value="">Select Gender</option> 
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+  
+        <div>
+            <label for="id_filter_method">Method:</label>
+            <select name="filter_method" id="id_filter_method">
+                <option value="">Select Method</option>
+                <option value="Online">online</option>
+                <option value="In-person">In-person</option>
+                <option value="Blended">Blended learning</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+  
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- end of filters -->
+{% endblock %}
