@@ -870,6 +870,27 @@ input:-webkit-autofill {
     height: 120px;
 }
 
+/* Tutor Dashboard Buttons */
+.dashboard-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.dashboard-buttons .btn-change, 
+.dashboard-buttons .btn-secondary {
+  background-color: #eae0da;
+  color: black;
+  padding: 13px 22px;
+  display: inline-block;
+}
+
+.dashboard-buttons .btn-change:hover, 
+.dashboard-buttons .btn-secondary:hover {
+  background-color: #d1c7b7;  
+  color: white;               
+}
+
 /* Responsive Burger Menu Styles */
 @media screen and (max-width: 1024px) {
   nav .nav-items {
@@ -1294,6 +1315,13 @@ input:-webkit-autofill {
   .profile-right img {
     display: block !important; /* Overrides display:none Parent Dashboard*/
     padding: 0 24px;
+  }
+
+/* Tutor Dashboard Buttons */
+  .dashboard-buttons {
+    max-width: 100%;
+    display: block; 
+    text-align: center;
   }
 }
 
