@@ -9,7 +9,7 @@ class UserRegisterForm(UserCreationForm):
         ('tutor', 'Tutor'),
         ('parent', 'Parent'),
     ]
-    user_type = forms.ChoiceField(choices=USER_TYPE_CHOICES, widget=forms.RadioSelect, required=True)
+    user_type = forms.ChoiceField(choices=USER_TYPE_CHOICES, widget=forms.RadioSelect, required=False)
 
     password1 = forms.CharField(
         label='Password',
@@ -24,7 +24,7 @@ class UserRegisterForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2', 'user_type']
+        fields = ['username', 'user_type', 'email', 'password1', 'password2']
 
     def clean_user_type(self):
         user_type = self.cleaned_data.get("user_type")

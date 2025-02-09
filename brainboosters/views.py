@@ -22,7 +22,7 @@ def register(request):
     user_type = request.GET.get('user_type', None)
 
     if request.method == 'POST':
-        form = UserRegisterForm(request.POST, request.FILES)
+        form = UserRegisterForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user) 
