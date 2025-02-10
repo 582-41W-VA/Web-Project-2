@@ -549,7 +549,14 @@ footer .copyright {
 /* Log In & Register Pages */
 
 /* Body background Change color Log In & Register Pages */
-body.login-page {
+body.Edit-Tutor-Profile,
+body.Edit-Parent-Profile,
+body.Parent-Dashboard,
+body.Create-Parent-Profile,
+body.Tutor-Dashboard,
+body.Create-Tutor-Profile,
+body.Register,
+body.Login {
   background-color: #eae0da;
   position: relative;
   overflow-x: hidden;
@@ -559,7 +566,14 @@ body.login-page {
 }
 
 /* Stripe Vertical Orange */
-body.login-page::before {
+body.Edit-Tutor-Profile::before,
+body.Edit-Parent-Profile::before,
+body.Parent-Dashboard::before,
+body.Create-Parent-Profile::before,
+body.Tutor-Dashboard::before,
+body.Create-Tutor-Profile::before,
+body.Register::before,
+body.Login::before {
   content: "";
   position: absolute;
   top: 0;
@@ -571,7 +585,14 @@ body.login-page::before {
 }
 
 /* Stripe Horizontal Yellow */
-body.login-page::after {
+body.Edit-Tutor-Profile::after,
+body.Edit-Parent-Profile::after,
+body.Parent-Dashboard::after,
+body.Create-Parent-Profile::after,
+body.Tutor-Dashboard::after,
+body.Create-Tutor-Profile::after,
+body.Register::after,
+body.Login::after {
   content: "";
   position: absolute;
   top: 34%;
@@ -581,6 +602,18 @@ body.login-page::after {
   background-color: #ffbf00;
   z-index: -1;
   transform: translateY(-50%);
+}
+
+/* Navbar change background color Log In & Register pages */
+body.Edit-Tutor-Profile nav,
+body.Edit-Parent-Profile nav,
+body.Parent-Dashboard nav,
+body.Create-Parent-Profile nav,
+body.Tutor-Dashboard nav,
+body.Create-Tutor-Profile nav,
+body.Register nav,
+body.Login nav {
+  background-color: #f7f2ed;
 }
 
 /* Navbar change background color Log In & Register pages */
@@ -835,6 +868,27 @@ input:-webkit-autofill {
 
 .profile-page.create-tutor-profile textarea#id_description {
     height: 120px;
+}
+
+/* Tutor Dashboard Buttons */
+.dashboard-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.dashboard-buttons .btn-change, 
+.dashboard-buttons .btn-secondary {
+  background-color: #eae0da;
+  color: black;
+  padding: 13px 22px;
+  display: inline-block;
+}
+
+.dashboard-buttons .btn-change:hover, 
+.dashboard-buttons .btn-secondary:hover {
+  background-color: #d1c7b7;  
+  color: white;               
 }
 
 /* Responsive Burger Menu Styles */
@@ -1262,6 +1316,13 @@ input:-webkit-autofill {
     display: block !important; /* Overrides display:none Parent Dashboard*/
     padding: 0 24px;
   }
+
+/* Tutor Dashboard Buttons */
+  .dashboard-buttons {
+    max-width: 100%;
+    display: block; 
+    text-align: center;
+  }
 }
 
 
@@ -1296,6 +1357,8 @@ input:-webkit-autofill {
 
 .filters button:hover {
   background-color: #10a19d;
+}
+
 }
   
 
