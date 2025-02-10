@@ -6,8 +6,6 @@ from django.core.exceptions import ObjectDoesNotExist
 from .forms import ParentProfileForm, TutorProfileForm, UserRegisterForm, UserLoginForm,TutorSearchForm
 from .models import TutorProfile, ParentProfile
 import random
-from django.shortcuts import render
-from .models import TutorProfile
 
 
 def homepage(request):
@@ -61,10 +59,10 @@ def user_logout(request):
     return redirect('login')
 
 def tutor_search(request):
-    tutors = TutorProfile.objects.select_related('user').all()
+    tutors = TutorProfile.objects.all()
     
-    if request.method == "GET":
-        form = TutorSearchForm(request.GET)
+    if request.method == "POST":
+        form = TutorSearchForm(request.POST)
 
         if form.is_valid():
             subject = form.cleaned_data.get("subject")
@@ -84,10 +82,11 @@ def tutor_search(request):
             if method is not None:
                 tutors = tutors.filter(method=method) 
 
+    
     else:
         form = TutorSearchForm()
 
-    return render(request, 'brainboosters/search.html', {"form": form, "tutors": tutors})
+    return render(request, 'brainboosters/search.html', {"tutors": tutors})
 
 
 @login_required
