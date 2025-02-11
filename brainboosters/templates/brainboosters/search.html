@@ -83,9 +83,9 @@
         {% for tutor in tutors %}
         <article class="card">
           {% if tutor.user.profile_picture %}
-            < img src="{{ tutor.user.profile_picture.url }}" alt="Tutor {{ tutor.name }}">
+            <img src="{{ tutor.user.profile_picture.url }}" alt="Tutor {{ tutor.name }}">
           {% else %}
-            < img src="{% static 'images/default-profile.png' %}" alt="Default Tutor Image">
+            <img src="{% static 'images/default-profile.png' %}" alt="Default Tutor Image">
           {% endif %}
           <h4>{{ tutor.name }}</h4>
           <p>{{ tutor.description|default:"Experienced tutor ready to help you succeed!" }}</p >

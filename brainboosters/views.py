@@ -3,8 +3,8 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist
-from .forms import ParentProfileForm, TutorProfileForm, UserRegisterForm, UserLoginForm,TutorSearchForm
-from .models import TutorProfile, ParentProfile
+from .forms import ContactForm, ParentProfileForm, TutorProfileForm, UserRegisterForm, UserLoginForm,TutorSearchForm
+from .models import TutorProfile, Review, ParentProfile
 import random
 
 
@@ -206,3 +206,29 @@ def edit_parent_profile(request, pk):
         form = ParentProfileForm(instance=profile)
     return render(request, 'brainboosters/edit_parent_profile.html', {'form': form})
 
+
+@login_required
+def tutor_detail(request, tutor_id):
+    tutor = get_object_or_404(TutorProfile, id=tutor_id)
+    reviews = tutor.tutor_reviews.all()
+
+    if request.method == 'POST':
+        if 'submit_review' in request.POST:
+            rating = request.POST.get('rating')
+            comment = request.POST.get('comment')
+            parent_profile = ParentProfile.objects.get(user=request.user)
+            Review.objects.create(tutor=tutor, parent=parent_profile, rating=rating, text=comment)
+            return redirect('tutor_detail', tutor_id=tutor_id)
+        elif 'submit_contact' in request.POST:
+            contact_form = ContactForm(request.POST)
+            if contact_form.is_valid():
+                return redirect('tutor_detail', tutor_id=tutor_id)
+    else:
+        contact_form = ContactForm()
+
+    context = {
+        'tutor': tutor,
+        'reviews': reviews,
+        'contact_form': contact_form,
+    }
+    return render(request, 'brainboosters/tutor_detail.html', context)
