@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Register{% endblock %}
+
+{% block body_class %}Register{% endblock %}
 
 {% block content %}
-  <body class="login-page">
     <div class="auth-container">
       <div class="form-container">
         <h2>Sign up</h2>
@@ -18,7 +18,7 @@
               {% if radio.choice_label == "Tutor" %}
                 <span class="btn-tutor">{{ radio.choice_label }}</span>
               {% else %}
-                <span class="btn-parent">{{ radio.choice_label }}</span>
+                <span class="btn-tutor">{{ radio.choice_label }}</span>
               {% endif %}
             </label>
             {% endfor %}
@@ -44,38 +44,32 @@
                 
                 <!-- Username -->
                 <div class="form-group">
-                  <label for="{{ form.username.id_for_label }}">Username</label>
-                  {{ form.username }}
-                  {% if form.username.errors %}
-                    <p class="error">{{ form.username.errors }}</p>
-                  {% endif %}
+                    <label for="{{ form.username.id_for_label }}">Username</label>
+                    {{ form.username }}
                 </div>
 
                 <!-- Email -->
                 <div class="form-group">
-                  <label for="{{ form.email.id_for_label }}">Email</label>
-                  {{ form.email }}
-                  {% if form.email.errors %}
-                    <p class="error">{{ form.email.errors }}</p>
-                  {% endif %}
+                    <label for="{{ form.email.id_for_label }}">Email</label>
+                    {{ form.email }}
                 </div>
 
                 <!-- Password Field -->
                 <div class="form-group">
-                  <label for="{{ form.password1.id_for_label }}">Password</label>
-                  {{ form.password1 }}
-                  {% if form.password1.errors %}
-                    <p class="error">{{ form.password1.errors }}</p>
-                  {% endif %}
+                    <label for="{{ form.password1.id_for_label }}">Password</label>
+                    {{ form.password1 }}
+                    {% if form.password1.help_text %}
+                        <small class="form-text text-muted">{{ form.password1.help_text }}</small>
+                    {% endif %}
                 </div>
 
                 <!-- Password Confirmation Field -->
                 <div class="form-group">
-                  <label for="{{ form.password2.id_for_label }}">Confirm Password</label>
-                  {{ form.password2 }}
-                  {% if form.password2.errors %}
-                    <p class="error">{{ form.password2.errors }}</p>
-                  {% endif %}
+                    <label for="{{ form.password2.id_for_label }}">Confirm Password</label>
+                    {{ form.password2 }}
+                    {% if form.password2.help_text %}
+                      <small class="form-text text-muted">{{ form.password2.help_text }}</small>
+                    {% endif %}
                 </div>
 
                 <button type="submit" class="btn-primary">Register</button>
@@ -93,5 +87,4 @@
       </form>
       </div>
     </div>
-  </body>
 {% endblock %}

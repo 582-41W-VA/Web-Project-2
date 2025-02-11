@@ -1,21 +1,33 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Tutor Dashboard{% endblock %}
+{% block body_class %}Parent-Dashboard{% endblock %}
 
 {% block content %}
-
-<h2>Parent Dashboard</h2>
-
-{% if parent_profile.user.profile_picture %}
-    <img src="{{ parent_profile.user.profile_picture.url }}" alt="Profile Picture" width="150">
-{% else %}
-    <img src="{% static 'images/no-image.jpg' %}" alt="No Profile Picture" width="150">
-{% endif %}
-<p>Name: {{ parent_profile.name }}</p>
-<p>Location: {{ parent_profile.location }}</p>
-<p>Child Name: {{ parent_profile.child_name }}</p>
-<p>Child Age: {{ parent_profile.child_age }}</p>
-<p>Child Grade: {{ parent_profile.child_grade }}</p>
-
+<div class="auth-container">
+    <div class="form-container">
+        <h2>Parent Dashboard</h2>
+        <div class="auth-flex">
+            <!-- Left Section - Parent Profile Details -->
+            <div class="form-left profile-left">
+                <p><strong>Name:</strong> {{ parent_profile.name }}</p>
+                <p><strong>Location:</strong> {{ parent_profile.location }}</p>
+                <p><strong>Child Name:</strong> {{ parent_profile.child_name }}</p>
+                <p><strong>Child Age:</strong> {{ parent_profile.child_age }}</p>
+                <p><strong>Child Grade:</strong> {{ parent_profile.child_grade }}</p>
+                
+            </div>
+            <!-- Right Section - Parent Profile Image -->
+            <div class="form-right profile-right">
+                {% if parent_profile.user.profile_picture %}
+                    <img src="{{ parent_profile.user.profile_picture.url }}" alt="Profile Picture" class="profile-image">
+                {% else %}
+                    <img src="{% static 'images/no-image.jpg' %}" alt="No Profile Picture" class="profile-image">
+                {% endif %}
+            </div>
+        </div>
+        <!-- Edit Profile Button -->
+        <a href="{% url 'edit_parent_profile' pk=parent_profile.pk %}" class="btn-primary">Edit Profile</a>
+    </div>    
+</div>
 {% endblock %}

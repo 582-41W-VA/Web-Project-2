@@ -13,15 +13,15 @@
                 >Subjects <i class="fa-solid fa-caret-down caret-icon"></i
               ></a>
               <ul class="dropdown-menu">
-                <li><a href="#">English</a></li>
-                <li><a href="#">French</a></li>
-                <li><a href="#">Math</a></li>
-                <li><a href="#">Science</a></li>
-                <li><a href="#">Chemistry</a></li>
+                <li><a href="#id_subject" onclick="document.getElementById('id_subject').value='English'">English</a></li>
+                <li><a href="#id_subject" onclick="document.getElementById('id_subject').value='French'">French</a></li>
+                <li><a href="#id_subject" onclick="document.getElementById('id_subject').value='Math'">Math</a></li>
+                <li><a href="#id_subject" onclick="document.getElementById('id_subject').value='Science'">Science</a></li>
+                <li><a href="#id_subject" onclick="document.getElementById('id_subject').value='Chemistry'">Chemistry</a></li>
               </ul>
             </li>
             <li class="become-tutor">
-              <a href="#" class="btn btn-tutor">Become a tutor</a>
+              <a href="{% url 'register' %}?user_type=tutor" class="btn btn-tutor">Become a tutor</a>
             </li>
           </ul>
         </div>

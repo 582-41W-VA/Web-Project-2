@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}search{% endblock %}
+
+{% block content %}
+<!-- filters -->
+<section class="filters">
+    <div class="container">
+      <form method="POST" action="{% url 'tutor_search' %}">
+        {% csrf_token %}
+        <div>
+            <label for="id_subject">Subject:</label>
+            <select name="subject" id="id_subject">
+                <option value="">Select Subject</option>
+                <option value="English" {% if request.POST.subject == 'English' %}selected{% endif %}>English</option>
+                <option value="French" {% if request.POST.subject == 'French' %}selected{% endif %}>French</option>
+                <option value="Math" {% if request.POST.subject == 'Math' %}selected{% endif %}>Math</option>            
+                <option value="Science" {% if request.POST.subject == 'Science' %}selected{% endif %}>Science</option>
+                <option value="Chemistry" {% if request.POST.subject == 'Chemistry' %}selected{% endif %}>Chemistry</option>
+            </select>
+        </div>
+  
+        <div>
+            <label for="id_level">Level:</label>
+            <select name="level" id="id_level">
+                <option value="">Select Level</option>
+                <option value="Kindergarten" {% if request.POST.level == 'Kindergarten' %}selected{% endif %}>Kindergarten</option>
+                <option value="Primary Education" {% if request.POST.level == 'Primary Education' %}selected{% endif %}>Primary Education</option>
+                <option value=" Secondary Education" {% if request.POST.level == ' Secondary Education' %}selected{% endif %}> Secondary Education</option>
+                <option value="Cegep" {% if request.POST.level == 'Cegep' %}selected{% endif %}>Cegep</option>
+                <option value="University" {% if request.POST.level == 'University' %}selected{% endif %}>University</option>
+            </select>
+        </div>
+  
+        <div>
+            <label for="id_price">Price:</label>
+            <select name="price" id="id_price">
+                <option value="">Select Price</option>
+                <option value="20-29" {% if request.POST.price == '20-29' %}selected{% endif %}>20-29</option>
+                <option value="30-39" {% if request.POST.price == '30-39' %}selected{% endif %}>30-39</option>
+                <option value="40-49" {% if request.POST.price == '40-49' %}selected{% endif %}>40-49</option>
+                <option value="50-59" {% if request.POST.price == '50-59' %}selected{% endif %}>50-59</option>
+                <option value="60-69" {% if request.POST.price == '60-69' %}selected{% endif %}>60-69</option>
+                <option value="70-99" {% if request.POST.price == '70-99' %}selected{% endif %}>70-99</option>
+            </select>
+        </div>
+  
+        <div>
+            <label for="id_gender">Gender:</label>
+            <select name="gender" id="id_gender">
+                <option value="">Select Gender</option> 
+                <option value="Male" {% if request.POST.gender == 'Male' %}selected{% endif %}>Male</option>
+                <option value="Female" {% if request.POST.gender == 'Female' %}selected{% endif %}>Female</option>
+                <option value="Other" {% if request.POST.gender == 'Other' %}selected{% endif %}>Other</option>
+            </select>
+        </div>
+  
+        <div>
+            <label for="id_filter_method">Method:</label>
+            <select name="filter_method" id="id_filter_method">
+                <option value="">Select Method</option>
+                <option value="Online" {% if request.POST.filter_method == 'Online' %}selected{% endif %}>online</option>
+                <option value="In-person" {% if request.POST.filter_method == 'In-person' %}selected{% endif %}>In-person</option>
+                <option value="Blended" {% if request.POST.filter_method == 'Blended' %}selected{% endif %}>Blended learning</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+  
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- end of filters -->
+
+<!-- tutors -->
+  <section class="tutor-card">
+    <div class="container">
+      <h2>Our Awesome Teachers</h2>
+      <div class="cards">
+        {% for tutor in tutors %}
+        <article class="card">
+          {% if tutor.user.profile_picture %}
+            <img src="{{ tutor.user.profile_picture.url }}" alt="Tutor {{ tutor.name }}">
+          {% else %}
+            <img src="{% static 'images/default-profile.png' %}" alt="Default Tutor Image">
+          {% endif %}
+          <h4>{{ tutor.name }}</h4>
+          <p>{{ tutor.description|default:"Experienced tutor ready to help you succeed!" }}</p >
+          <p><strong>Experience:</strong> {{ tutor.experience|default:"Not provided" }}</p >
+          <p><strong>Method:</strong> {{ tutor.get_method_display }}</p >
+          <p><strong>Hourly Rate:</strong> ${{ tutor.hourly_rate|default:"N/A" }}</p >
+        </article>
+        {% empty %}
+        <p>No tutors available at the moment. Check back soon!</p >
+        {% endfor %}
+      </div>
+    </div>
+</section>
+
+ 
+{% endblock %}

@@ -1,13 +1,11 @@
 {% extends 'base.html' %}
-{% load static %}
 
-{% block body_class %}Create-Tutor-Profile{% endblock %}
+{% block body_class %}Edit-Tutor-Profile{% endblock %}
 
 {% block content %}
 <div class="auth-container tutor-profile">
     <div class="form-container profile-page create-tutor-profile">
-        <h2>Create Tutor Profile</h2>
-        <!-- Form for Creating Tutor Profile -->
+        <h2>Edit Tutor Profile</h2>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {% for field in form %}
@@ -22,8 +20,7 @@
                     {% endfor %}
                 </div>
             {% endfor %}
-            <!-- Save Profile Button -->
-            <button type="submit" class="btn-primary">Save Profile</button>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
         </form>
     </div>
 </div>

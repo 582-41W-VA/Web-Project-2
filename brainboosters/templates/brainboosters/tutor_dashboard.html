@@ -1,25 +1,39 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Tutor Dashboard{% endblock %}
+{% block body_class %}Tutor-Dashboard{% endblock %}
 
 {% block content %}
-
-<h2>Tutor Dashboard</h2>
-
-{% if tutor_profile.user.profile_picture %}
-    <img src="{{ tutor_profile.user.profile_picture.url }}" alt="Profile Picture" width="150">
-{% else %}
-    <img src="{% static 'images/no-image.jpg' %}" alt="No Profile Picture" width="150">
-{% endif %}
-<p>Name: {{ tutor_profile.name }}</p>
-<p>Gender: {{ tutor_profile.gender }}</p>
-<p>Degree: {{ tutor_profile.degree }}</p>
-<p>School: {{ tutor_profile.school }}</p>
-<p>Major: {{ tutor_profile.major }}</p>
-<p>Experience: {{ tutor_profile.experience }}</p>
-<p>Method: {{ tutor_profile.method }}</p>
-<p>Hourly Rate: ${{ tutor_profile.hourly_rate }}</p>
-<p>Description: {{ tutor_profile.description }}</p>
-
+<div class="auth-container">
+    <div class="form-container">
+        <h2>Tutor Dashboard</h2>
+        <div class="auth-flex">
+            <!-- Left Section - Tutor Profile Details -->
+            <div class="form-left profile-left">
+                <p><strong>Name:</strong> {{ tutor_profile.name }}</p>
+                <p><strong>Gender:</strong> {{ tutor_profile.gender }}</p>
+                <p><strong>Degree:</strong> {{ tutor_profile.degree }}</p>
+                <p><strong>School:</strong> {{ tutor_profile.school }}</p>
+                <p><strong>Major:</strong> {{ tutor_profile.major }}</p>
+                <p><strong>Experience:</strong> {{ tutor_profile.experience }}</p>
+                <p><strong>Method:</strong> {{ tutor_profile.method }}</p>
+                <p><strong>Hourly Rate:</strong> ${{ tutor_profile.hourly_rate }}</p>
+                <p><strong>Description:</strong> {{ tutor_profile.description }}</p>
+            </div>
+            <!-- Right Section - Tutor Profile Image -->
+            <div class="form-right profile-right">
+                {% if tutor_profile.user.profile_picture %}
+                    <img src="{{ tutor_profile.user.profile_picture.url }}" alt="Profile Picture" class="profile-image">
+                {% else %}
+                    <img src="{% static 'images/no-image.jpg' %}" alt="No Profile Picture" class="profile-image">
+                {% endif %}
+            </div>
+        </div>
+            <!-- Edit Profile Button -->
+            <div class="dashboard-buttons">
+                <a href="{% url 'edit_tutor_profile' pk=tutor_profile.pk %}" class="btn-primary">Edit Profile</a>
+                <a href="" class="btn-change btn-primary">Book a Meeting</a>
+            </div>
+    </div>    
+</div>
 {% endblock %}

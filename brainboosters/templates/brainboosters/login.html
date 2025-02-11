@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Login{% endblock %}
+
+{% block body_class %}Login{% endblock %}
+
 {% block content %}
-  <body class="login-page">
     <div class="auth-container">
       <div class="form-container">
         <h2>Log in</h2>
@@ -10,14 +11,12 @@
           <!-- Left side: -->
           <div class="form-left">
             <!-- errors -->
-            {% if form.errors %}
+            {% if form.non_field_errors %}
             <div class="error-message">
               <p><strong>Please correct the following:</strong></p>
               <ul>
-                {% for field in form %}
-                  {% for error in field.errors %}
-                    <li>{{ error }}</li>
-                  {% endfor %}
+                {% for error in form.non_field_errors %}
+                  <li>{{ error }}</li>
                 {% endfor %}
               </ul>
             </div>
@@ -47,5 +46,4 @@
         </div>
       </div>
     </div>
-  </body>
 {% endblock %}
