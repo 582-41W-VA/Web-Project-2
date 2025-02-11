@@ -80,3 +80,8 @@ class ParentProfileForm(forms.ModelForm):
         model = ParentProfile
         fields = ['name', 'location', 'child_name', 'child_age', 'child_grade']
 
+
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    email = forms.EmailField()
+    message = forms.CharField(widget=forms.Textarea)
