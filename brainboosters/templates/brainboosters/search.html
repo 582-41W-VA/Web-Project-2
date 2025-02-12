@@ -10,9 +10,9 @@
       <form method="POST" action="{% url 'tutor_search' %}">
         {% csrf_token %}
         <div>
-            <label for="id_subject">Subject:</label>
+            <label for="id_subject"></label>
             <select name="subject" id="id_subject">
-                <option value="">Select Subject</option>
+                <option value="">Subject</option>
                 <option value="English" {% if request.POST.subject == 'English' %}selected{% endif %}>English</option>
                 <option value="French" {% if request.POST.subject == 'French' %}selected{% endif %}>French</option>
                 <option value="Math" {% if request.POST.subject == 'Math' %}selected{% endif %}>Math</option>            
@@ -22,9 +22,9 @@
         </div>
   
         <div>
-            <label for="id_level">Level:</label>
+            <label for="id_level"></label>
             <select name="level" id="id_level">
-                <option value="">Select Level</option>
+                <option value="">Level</option>
                 <option value="Kindergarten" {% if request.POST.level == 'Kindergarten' %}selected{% endif %}>Kindergarten</option>
                 <option value="Primary Education" {% if request.POST.level == 'Primary Education' %}selected{% endif %}>Primary Education</option>
                 <option value=" Secondary Education" {% if request.POST.level == ' Secondary Education' %}selected{% endif %}> Secondary Education</option>
@@ -34,9 +34,9 @@
         </div>
   
         <div>
-            <label for="id_price">Price:</label>
+            <label for="id_price"></label>
             <select name="price" id="id_price">
-                <option value="">Select Price</option>
+                <option value="">Price</option>
                 <option value="20-29" {% if request.POST.price == '20-29' %}selected{% endif %}>20-29</option>
                 <option value="30-39" {% if request.POST.price == '30-39' %}selected{% endif %}>30-39</option>
                 <option value="40-49" {% if request.POST.price == '40-49' %}selected{% endif %}>40-49</option>
@@ -47,9 +47,9 @@
         </div>
   
         <div>
-            <label for="id_gender">Gender:</label>
+            <label for="id_gender"></label>
             <select name="gender" id="id_gender">
-                <option value="">Select Gender</option> 
+                <option value="">Gender</option> 
                 <option value="Male" {% if request.POST.gender == 'Male' %}selected{% endif %}>Male</option>
                 <option value="Female" {% if request.POST.gender == 'Female' %}selected{% endif %}>Female</option>
                 <option value="Other" {% if request.POST.gender == 'Other' %}selected{% endif %}>Other</option>
@@ -57,20 +57,18 @@
         </div>
   
         <div>
-            <label for="id_filter_method">Method:</label>
+            <label for="id_filter_method"></label>
             <select name="filter_method" id="id_filter_method">
-                <option value="">Select Method</option>
+                <option value="">Method</option>
                 <option value="Online" {% if request.POST.filter_method == 'Online' %}selected{% endif %}>online</option>
                 <option value="In-person" {% if request.POST.filter_method == 'In-person' %}selected{% endif %}>In-person</option>
                 <option value="Blended" {% if request.POST.filter_method == 'Blended' %}selected{% endif %}>Blended learning</option>
-                <!-- Add more options as needed -->
             </select>
         </div>
-  
-        <div>
+      </form> 
+      <div>
             <button type="submit">Submit</button>
-        </div>
-      </form>
+      </div>
     </div>
   </section>
   <!-- end of filters -->
