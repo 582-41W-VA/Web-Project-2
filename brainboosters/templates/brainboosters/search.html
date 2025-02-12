@@ -7,6 +7,8 @@
 <!-- filters -->
 <section class="filters">
     <div class="container">
+      <h1>Tutors that fit your schedule</h1>
+      <p>Find the perfect private tutor and Free Vidio Meetings.Then book one-to one Online Lessons to fit your schedule.</p>
       <form method="POST" action="{% url 'tutor_search' %}">
         {% csrf_token %}
         <div>
@@ -65,10 +67,10 @@
                 <option value="Blended" {% if request.POST.filter_method == 'Blended' %}selected{% endif %}>Blended learning</option>
             </select>
         </div>
-      </form> 
-      <div>
+      </form>
+       <div>
             <button type="submit">Submit</button>
-      </div>
+        </div>
     </div>
   </section>
   <!-- end of filters -->
@@ -77,13 +79,14 @@
   <section class="tutor-card">
     <div class="container">
       <h2>Our Awesome Teachers</h2>
+      <p>Thousands of parents, students, and teachers have rated us 4.96/5</p>
       <div class="cards">
         {% for tutor in tutors %}
         <article class="card">
           {% if tutor.user.profile_picture %}
-            < img src="{{ tutor.user.profile_picture.url }}" alt="Tutor {{ tutor.name }}">
+            <img src="{{ tutor.user.profile_picture.url }}" alt="Tutor {{ tutor.name }}">
           {% else %}
-            < img src="{% static 'images/default-profile.png' %}" alt="Default Tutor Image">
+            <img src="{% static 'images/default-profile.png' %}" alt="Default Tutor Image">
           {% endif %}
           <h4>{{ tutor.name }}</h4>
           <p>{{ tutor.description|default:"Experienced tutor ready to help you succeed!" }}</p >
