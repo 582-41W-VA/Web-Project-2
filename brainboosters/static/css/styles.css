@@ -1329,32 +1329,46 @@ input:-webkit-autofill {
 .filters {
   padding: 20px 0;
   line-height: 1.8;
+  text-align: center;
+  align-items: center;
 }
-
+ 
+.filters form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+ 
+.filters form div {
+  margin-bottom: 15px;
+  width: 15%;
+}
+ 
 .filters label {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
 }
-
+ 
 .filters select,
-.filters input[type="text"],
-.filters button {
-  width: 70%;
+.filters input[type="text"] {
   padding: 10px;
-  margin-bottom: 15px;
+  margin: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
 }
-
+ 
 .filters button {
+  padding: 10px 20px;
   background-color: #03ccba;
-  color: white;
+  color: rgb(22, 22, 22);
   border: none;
   cursor: pointer;
+  font-size: large;
 }
-
+ 
 .filters button:hover {
   background-color: #10a19d;
 }
