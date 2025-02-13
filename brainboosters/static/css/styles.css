@@ -891,6 +891,107 @@ input:-webkit-autofill {
   color: white;               
 }
 
+/* Search Filters */
+.filters {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.filters form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: flex-start;
+  margin-top: 48px;
+}
+
+.filters select {
+  font-size: 16px;
+  width: 154px;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Filters Submit button */
+.submit-container {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 56px 0 24px;
+}
+
+.submit-container button {
+  font-size: 24px;
+  font-weight: 400;
+  padding: 24px 48px;
+  background-color: #03ccba;
+  color: #000000;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submit-container button:hover {
+  background-color: #10a19d;
+  color: white;
+}
+
+/* Filters Search tutor-card  */
+.tutor-card .container .tutor-card-filters {
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 72px;
+}
+
+/* Solid line separator */
+.separator {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 16px 32px;
+}
+
+/* Hourly Rate container */
+.hourly-rate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  padding: 0 32px;
+}
+
+/* Hourly rate text */
+.hourly-rate .rate {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Star Rating container */
+.star-rating {
+  display: flex;
+  align-items: center;
+}
+
+.star-rating span {
+  font-size: 1.2em;
+  margin-right: 8px;
+}
+
+.star-rating .rating {
+  font-size: 1em;
+  color: #999;
+}
+
+/* Book Tutor start search-start */
+.search-start {
+  margin-top: 88px;
+}
+
 /* Responsive Burger Menu Styles */
 @media screen and (max-width: 1024px) {
   nav .nav-items {
@@ -1054,6 +1155,13 @@ input:-webkit-autofill {
     margin-bottom: 20px;
   }
 
+  /* Search Filters */
+  .submit-container button {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+  }
+  
   /* About */
   .start h2,
   .tutor-card h2,
@@ -1324,55 +1432,6 @@ input:-webkit-autofill {
     text-align: center;
   }
 }
-
-
-.filters {
-  padding: 20px 0;
-  line-height: 1.8;
-  text-align: center;
-  align-items: center;
-}
- 
-.filters form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
- 
-.filters form div {
-  margin-bottom: 15px;
-  width: 15%;
-}
- 
-.filters label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-}
- 
-.filters select,
-.filters input[type="text"] {
-  padding: 10px;
-  margin: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
- 
-.filters button {
-  padding: 10px 20px;
-  background-color: #03ccba;
-  color: rgb(22, 22, 22);
-  border: none;
-  cursor: pointer;
-  font-size: large;
-}
- 
-.filters button:hover {
-  background-color: #10a19d;
-}
-  
 
 /* Responsive size 480 */
 @media (max-width: 480px) {
