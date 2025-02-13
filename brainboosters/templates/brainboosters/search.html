@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}search{% endblock %}
+{% block title %}Search{% endblock %}
 
 {% block content %}
 <!-- filters -->
 <section class="filters">
     <div class="container">
       <h1>Tutors that fit your schedule</h1>
-      <p>Find the perfect private tutor and Free Vidio Meetings.Then book one-to one Online Lessons to fit your schedule.</p>
+      <p>Find the perfect private tutor and Free Video Meetings. Then book one-to one Online Lessons to fit your schedule.</p>
       <form method="POST" action="{% url 'tutor_search' %}">
         {% csrf_token %}
         <div>
@@ -67,10 +67,10 @@
                 <option value="Blended" {% if request.POST.filter_method == 'Blended' %}selected{% endif %}>Blended learning</option>
             </select>
         </div>
-      </form>
-       <div>
-            <button type="submit">Submit</button>
+          <div class="submit-container">
+            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
+      </form>
     </div>
   </section>
   <!-- end of filters -->
@@ -79,7 +79,7 @@
   <section class="tutor-card">
     <div class="container">
       <h2>Our Awesome Teachers</h2>
-      <p>Thousands of parents, students, and teachers have rated us 4.96/5</p>
+      <p class="tutor-card-filters">Thousands of parents, students, and teachers have rated us 4.96/5</p>
       <div class="cards">
         {% for tutor in tutors %}
         <article class="card">
@@ -92,14 +92,34 @@
           <p>{{ tutor.description|default:"Experienced tutor ready to help you succeed!" }}</p >
           <p><strong>Experience:</strong> {{ tutor.experience|default:"Not provided" }}</p >
           <p><strong>Method:</strong> {{ tutor.get_method_display }}</p >
-          <p><strong>Hourly Rate:</strong> ${{ tutor.hourly_rate|default:"N/A" }}</p >
+            
+          <!-- Solid line separator -->
+          <hr class="separator">
+
+          <!-- Hourly rate container -->
+          <div class="hourly-rate">
+            <span class="rate">${{ tutor.hourly_rate|default:"N/A" }} /hr</span>
+            <div class="star-rating">
+              <span>⭐</span> <!-- Also we can dynamically adjust this if have the rating value -->
+              <span class="rating">5/5</span>
+            </div>
+          </div>
         </article>
         {% empty %}
         <p>No tutors available at the moment. Check back soon!</p >
         {% endfor %}
       </div>
     </div>
+    <!-- Book Tutor start-->
+  <section class="start search-start">
+    <div class="container">
+      <h2>
+        Book a free meeting with a tutor today and find out how they can help your
+        child
+      </h2>
+      <a href="#" class="btn btn-primary">Book Tutor</a>
+    </div>
+  </section>
+<!-- end of Book Tutor start -->
 </section>
-
- 
 {% endblock %}
