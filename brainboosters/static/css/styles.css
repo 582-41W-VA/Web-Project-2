@@ -838,36 +838,36 @@ input:-webkit-autofill {
 
 /* Styles for the Create Tutor Profile Page */
 .auth-container.tutor-profile {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .profile-page.create-tutor-profile label {
-    margin-top: 24px;
+  margin-top: 24px;
 }
 
 .profile-page.create-tutor-profile select,
 .profile-page.create-tutor-profile textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 8px;
-    border: 1px solid #e6e6e6;
-    border-radius: 4px;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
 }
 
 .profile-page.create-tutor-profile select {
-    width: 32%;
+  width: 32%;
 }
 
 .profile-page.create-tutor-profile textarea {
-    height: 40px;
+  height: 40px;
 }
 
 .profile-page.create-tutor-profile textarea description {
-    height: 40px;
+  height: 40px;
 }
 
 .profile-page.create-tutor-profile textarea#id_description {
-    height: 120px;
+  height: 120px;
 }
 
 /* Tutor Dashboard Buttons */
@@ -877,7 +877,7 @@ input:-webkit-autofill {
   justify-content: space-between;
 }
 
-.dashboard-buttons .btn-change, 
+.dashboard-buttons .btn-change,
 .dashboard-buttons .btn-secondary {
   background-color: #eae0da;
   color: black;
@@ -885,10 +885,10 @@ input:-webkit-autofill {
   display: inline-block;
 }
 
-.dashboard-buttons .btn-change:hover, 
+.dashboard-buttons .btn-change:hover,
 .dashboard-buttons .btn-secondary:hover {
-  background-color: #d1c7b7;  
-  color: white;               
+  background-color: #d1c7b7;
+  color: white;
 }
 
 /* Search Filters */
@@ -990,6 +990,144 @@ input:-webkit-autofill {
 /* Book Tutor start search-start */
 .search-start {
   margin-top: 88px;
+}
+
+/* Tutor-Details Page */
+.auth-container.tutor-details {
+  flex-direction: column;
+  background-color: #fff;
+  margin-top: 80px;
+}
+
+.tutor-image-name {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  /* margin-bottom: 32px; */
+}
+
+.tutor-image {
+  width: 240px;
+  height: auto;
+  margin-right: 88px;
+}
+
+.tutor-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.tutor-info h3 {
+  margin: 12px 0 22px;
+}
+
+.tutor-info p {
+  color: #777;
+  margin-bottom: 16px;
+}
+
+.tutor-detail-margin {
+  margin-bottom: 40px;
+}
+
+.hourly-rates {
+  font-size: 16px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.dollar-icon {
+  margin-right: 5px;
+}
+
+.divider {
+  border-top: 1px solid #ccc;
+  margin: 24px 0 32px;
+}
+
+.rating-info {
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.star-icon {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.reviews-box {
+  background-color: #f7f2ed;
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 54px;
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Space between reviews */
+}
+
+.review {
+  padding: 12px;
+  background-color: #fafafa;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.review p {
+  margin: 8px 0;
+}
+
+.review strong {
+  font-weight: bold;
+}
+
+.review em {
+  font-style: italic;
+  color: #777;
+}
+
+/* .contact-form input,
+.contact-form textarea {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+} */
+
+/* Placeholder text color */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #777;
+}
+
+.contact-form {
+  background-color: #f7f2ed;
+  padding: 26px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.name-fields {
+  display: flex;
+  gap: 20px;
+}
+
+.input-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #fafafa;
+  padding: 10px;
+}
+
+.input-box input,
+.input-box textarea {
+  border: none;
+  background: transparent;
+  outline: none;
 }
 
 /* Responsive Burger Menu Styles */
@@ -1161,7 +1299,7 @@ input:-webkit-autofill {
     padding: 15px 0;
     font-size: 18px;
   }
-  
+
   /* About */
   .start h2,
   .tutor-card h2,
@@ -1425,14 +1563,39 @@ input:-webkit-autofill {
     padding: 0 24px;
   }
 
-/* Tutor Dashboard Buttons */
+  /* Tutor Dashboard Buttons */
   .dashboard-buttons {
     max-width: 100%;
-    display: block; 
+    display: block;
     text-align: center;
   }
-}
 
+  /* Tutor-Details */
+  .tutor-image-name {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tutor-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .tutor-info {
+    align-items: center;
+  }
+
+  .name-fields {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-form .btn-primary {
+    /* font-size: 24px; */
+    padding: 8px 16px;
+  }
+}
 /* Responsive size 480 */
 @media (max-width: 480px) {
   footer {
@@ -1457,5 +1620,4 @@ input:-webkit-autofill {
   footer .copyright {
     font-size: 14px;
   }
-
 }

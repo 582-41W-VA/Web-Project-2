@@ -1,51 +1,83 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static %} 
 
 {% block content %}
-<div class="tutor-details">
-    <!--img src="{{ tutor.user.profile_picture }}" alt="{{ tutor.name }}"-->
-    <h1>{{ tutor.name }}</h1>
-    <p>Degree: {{ tutor.degree }}</p>
-    <p>School: {{ tutor.school }}</p>
-    <p>Major: {{ tutor.major }}</p>
-    <p>Hourly Rate: ${{ tutor.hourly_rate }}</p>
-    <p>{{ tutor.description }}</p>
-</div>
 
-<div class="reviews">
-    <h2>Reviews</h2>
-    {% for review in reviews %}
-        <div class="review">
-            <p>Rating: {{ review.rating }} stars</p>
-            <p>{{ review.text }}</p>
-            <p>By {{ review.parent.user.username }} on {{ review.created_at }}</p>
+<div class="auth-container tutor-details">
+  <div class="form-container">
+    <!-- Tutor Image and Name Section -->
+    <div class="tutor-image-name">
+      <img
+        src="{{ tutor.user.profile_picture }}"
+        alt="{{ tutor.name }}"
+        class="tutor-image"
+      />
+      <div class="tutor-info">
+        <h3>{{ tutor.name }}</h3>
+        <p>{{ tutor.degree }}, {{ tutor.school }}, {{ tutor.major }}</p>
+        <div class="hourly-rates">
+          <span class="dollar-icon">$</span>{{ tutor.hourly_rate }} /hr
         </div>
-    {% endfor %}
+      </div>
+    </div>
 
-    {% if user.is_authenticated and user.user_type == 'parent' %}
-    <form method="post">
-        {% csrf_token %}
-        <label for="rating">Rating:</label>
-        <input type="number" name="rating" min="1" max="5" required>
-        <label for="comment">Comment:</label>
-        <textarea name="comment" required></textarea>
-        <button type="submit" name="submit_review">Submit Review</button>
-    </form>
-    {% else %}
-        <p>You must be logged in as a parent to submit a review.</p>
-    {% endif %}
-</div>
+    <hr class="divider" />
 
-<div class="contact-form">
-    <h2>Contact Tutor</h2>
-    {% if user.is_authenticated and user.user_type == 'parent' %}
-    <form method="post" id="contact-form'">
+    <!-- About Me Section -->
+    <h4>About Me</h4>
+    <p class="tutor-detail-margin">{{ tutor.description }}</p>
+
+    <!-- Ratings & Reviews Section -->
+    <h4>Ratings & Reviews</h4>
+    <div class="rating-info"><span class="star-icon">⭐</span> 5/5</div>
+    <div class="reviews-box">
+      <div class="reviews">
+        {% if reviews %} {% for review in reviews %}
+        <div class="review">
+          <p><strong>Rating:</strong> {{ review.rating }} stars</p>
+          <p>{{ review.text }}</p>
+          <p>
+            <em
+              >By {{ review.parent.user.username }} on {{ review.created_at
+              }}</em
+            >
+          </p>
+        </div>
+        {% endfor %} {% else %}
+        <p>No reviews yet.</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <h4 class="tutor-detail-margin">Contact Me</h4>
+    <div class="contact-form">
+      {% if user.is_authenticated and user.user_type == 'parent' %}
+      <form method="post">
         {% csrf_token %}
-        {{ contact_form.as_p }}
-        <button type="submit" name="submit_contact">Send Message</button>
-    </form>
-    {% else %}
-        <p>You must be logged in as a parent to contact a tutor.</p>
-    {% endif %}
+        <div class="name-fields">
+          <div class="form-group input-box">
+            <label for="id_first_name"></label>
+            {{ contact_form.first_name }}
+          </div>
+          <div class="form-group input-box">
+            <label for="id_last_name"></label>
+            {{ contact_form.last_name }}
+          </div>
+        </div>
+        <div class="form-group input-box">
+          <label for="id_email"></label>
+          {{ contact_form.email }}
+        </div>
+        <div class="form-group input-box">
+          <label for="id_message"></label>
+          {{ contact_form.message }}
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+      {% else %}
+      <p>You must be logged in as a parent to contact a tutor.</p>
+      {% endif %}
+    </div>
+  </div>
 </div>
 {% endblock %}
