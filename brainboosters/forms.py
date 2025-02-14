@@ -81,7 +81,13 @@ class ParentProfileForm(forms.ModelForm):
         fields = ['name', 'location', 'child_name', 'child_age', 'child_grade']
 
 
+# class ContactForm(forms.Form):
+#     name = forms.CharField(max_length=100)
+#     email = forms.EmailField()
+#     message = forms.CharField(widget=forms.Textarea)
+
 class ContactForm(forms.Form):
-    name = forms.CharField(max_length=100)
-    email = forms.EmailField()
-    message = forms.CharField(widget=forms.Textarea)
+    first_name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': 'First Name'}))
+    last_name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': 'Last Name'}))
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'placeholder': 'Email'}))
+    message = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Message'}))
