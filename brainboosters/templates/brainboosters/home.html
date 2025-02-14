@@ -152,9 +152,9 @@
         {% endif %}
         <h4>{{ tutor.name }}</h4>
         <p>{{ tutor.description|default:"Experienced tutor ready to help you succeed!" }}</p>
-        <p><strong>Experience:</strong> {{ tutor.experience|default:"Not provided" }}</p>
+        <!--p><strong>Experience:</strong> {{ tutor.experience|default:"Not provided" }}</p>
         <p><strong>Method:</strong> {{ tutor.get_method_display }}</p>
-        <p><strong>Hourly Rate:</strong> ${{ tutor.hourly_rate|default:"N/A" }}</p>
+        <p><strong>Hourly Rate:</strong> ${{ tutor.hourly_rate|default:"N/A" }}</p-->
       </article>
       {% empty %}
       <p>No tutors available at the moment. Check back soon!</p>
