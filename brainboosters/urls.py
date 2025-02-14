@@ -16,6 +16,7 @@ urlpatterns = [
     path('parent-dashboard/', views.parent_dashboard, name='parent_dashboard'),
     path('tutor/<int:pk>/edit/', views.edit_tutor_profile, name='edit_tutor_profile'),
     path('parent/<int:pk>/edit/', views.edit_parent_profile, name='edit_parent_profile'),
+    path('contact-us/', views.contact_us, name='contact_us'),
 ]
 
 if settings.DEBUG:

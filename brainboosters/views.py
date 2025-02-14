@@ -3,7 +3,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist
-from .forms import ParentProfileForm, TutorProfileForm, UserRegisterForm, UserLoginForm,TutorSearchForm
+from .forms import ParentProfileForm, TutorProfileForm, UserRegisterForm, UserLoginForm,TutorSearchForm,ContactForm
 from .models import TutorProfile, ParentProfile
 import random
 
@@ -88,6 +88,10 @@ def tutor_search(request):
 
     return render(request, 'brainboosters/search.html', {"tutors": tutors})
 
+
+def contact_us(request):
+        form = ContactForm()
+        return render(request, 'brainboosters/contact_us.html', {'form': form})
 
 @login_required
 def create_tutor_profile(request):
