@@ -32,7 +32,7 @@
             <!-- Edit Profile Button -->
             <div class="dashboard-buttons">
                 <a href="{% url 'edit_tutor_profile' pk=tutor_profile.pk %}" class="btn-primary">Edit Profile</a>
-                <a href="" class="btn-change btn-primary">Book a Meeting</a>
+                <a href="{% url 'jitsi_meeting_view' %}" class="btn-change btn-primary">Book a Meeting</a> 
             </div>
     </div>    
 </div>

@@ -3,8 +3,8 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist
-from .forms import ParentProfileForm, TutorProfileForm, UserRegisterForm, UserLoginForm,TutorSearchForm,ContactForm
-from .models import TutorProfile, ParentProfile
+from .forms import ContactForm, ParentProfileForm, TutorProfileForm, UserRegisterForm, UserLoginForm,TutorSearchForm
+from .models import TutorProfile, Review, ParentProfile
 import random
 
 
@@ -57,36 +57,6 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return redirect('login')
-
-def tutor_search(request):
-    tutors = TutorProfile.objects.all()
-    
-    if request.method == "POST":
-        form = TutorSearchForm(request.POST)
-
-        if form.is_valid():
-            subject = form.cleaned_data.get("subject")
-            level = form.cleaned_data.get("level")
-            price = form.cleaned_data.get("price")
-            gender = form.cleaned_data.get("gender")
-            method = form.cleaned_data.get("filter_method")
-
-            if subject:
-                tutors = tutors.filter(major=subject)  
-            if level is not None:
-                tutors = tutors.filter(degree=level)  
-            if price is not None:
-                tutors = tutors.filter(hourly_rate=price)
-            if gender is not None:
-                tutors = tutors.filter(gender=gender) 
-            if method is not None:
-                tutors = tutors.filter(method=method) 
-
-    
-    else:
-        form = TutorSearchForm()
-
-    return render(request, 'brainboosters/search.html', {"tutors": tutors})
 
 
 def contact_us(request):
@@ -210,3 +180,53 @@ def edit_parent_profile(request, pk):
         form = ParentProfileForm(instance=profile)
     return render(request, 'brainboosters/edit_parent_profile.html', {'form': form})
 
+
+@login_required
+def tutor_detail(request, tutor_id):
+    tutor = get_object_or_404(TutorProfile, id=tutor_id)
+    reviews = tutor.tutor_reviews.all()
+
+    if request.method == 'POST':
+        if 'submit_review' in request.POST:
+            rating = request.POST.get('rating')
+            comment = request.POST.get('comment')
+            parent_profile = ParentProfile.objects.get(user=request.user)
+            Review.objects.create(tutor=tutor, parent=parent_profile, rating=rating, text=comment)
+            return redirect('tutor_detail', tutor_id=tutor_id)
+        elif 'submit_contact' in request.POST:
+            contact_form = ContactForm(request.POST)
+            if contact_form.is_valid():
+                return redirect('tutor_detail', tutor_id=tutor_id)
+    else:
+        contact_form = ContactForm()
+
+    context = {
+        'tutor': tutor,
+        'reviews': reviews,
+        'contact_form': contact_form,
+    }
+    return render(request, 'brainboosters/tutor_detail.html', context)
+
+
+def tutor_search(request):
+    tutors = TutorProfile.objects.all()
+
+    subject = request.POST.get('subject')
+    level = request.POST.get('level')
+    price = request.POST.get('price')
+    gender = request.POST.get('gender')
+    method = request.POST.get('method')
+
+    if subject:
+        tutors = tutors.filter(subject_list__name=subject)
+    if level:
+        tutors = tutors.filter(level_list__name=level)
+    if price:
+            min_price, max_price = map(int, price.split('-'))
+            tutors = tutors.filter(hourly_rate__gte=min_price, hourly_rate__lte=max_price)
+    if gender:
+        tutors = tutors.filter(gender=gender)
+    if method:
+        tutors = tutors.filter(method=method)
+
+    return render(request, 'brainboosters/search.html', {'tutors': tutors})

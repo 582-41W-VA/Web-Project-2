@@ -17,6 +17,7 @@ urlpatterns = [
     path('tutor/<int:pk>/edit/', views.edit_tutor_profile, name='edit_tutor_profile'),
     path('parent/<int:pk>/edit/', views.edit_parent_profile, name='edit_parent_profile'),
     path('contact-us/', views.contact_us, name='contact_us'),
+    path('tutors/<int:tutor_id>/', views.tutor_detail, name='tutor_detail'),
 ]
 
 if settings.DEBUG:
