@@ -37,7 +37,7 @@ class TutorProfile(models.Model):
     school = models.CharField(max_length=100, null=True, blank=True)
     major = models.CharField(max_length=100, null=True, blank=True)
     experience = models.CharField(max_length=100, null=True, blank=True)
-    method = models.CharField(max_length=20, choices=[('in_person', 'In Person'), ('online', 'Online'), ('hybrid', 'Hybrid'),], null=True, blank=True)
+    method = models.CharField(max_length=20, choices=[('In-Person', 'In-Person'), ('Online', 'Online'), ('Online & In-Person', 'Online & In-Person'),], null=True, blank=True)
     hourly_rate = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     description = models.CharField(max_length=300, null=True, blank=True)
 
