@@ -59,6 +59,10 @@ def user_logout(request):
     return redirect('login')
 
 
+def contact_us(request):
+        form = ContactForm()
+        return render(request, 'brainboosters/contact_us.html', {'form': form})
+
 @login_required
 def create_tutor_profile(request):
     # Check if the user already has a tutor profile and redirect if profile already exists
