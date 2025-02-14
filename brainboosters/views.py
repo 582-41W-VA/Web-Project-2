@@ -3,7 +3,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist
-from .forms import ContactForm, ParentProfileForm, TutorProfileForm, UserRegisterForm, UserLoginForm,TutorSearchForm
+from .forms import ContactForm, ParentProfileForm, TutorProfileForm, UserRegisterForm, UserLoginForm
 from .models import TutorProfile, Review, ParentProfile
 import random
 
