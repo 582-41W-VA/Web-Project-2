@@ -7,70 +7,74 @@
 <!-- filters -->
 <section class="filters">
     <div class="container">
-      <h1>Tutors that fit your schedule</h1>
-      <p>Find the perfect private tutor and Free Video Meetings. Then book one-to one Online Lessons to fit your schedule.</p>
-      <form method="POST" action="{% url 'tutor_search' %}">
-        {% csrf_token %}
-        <div>
-            <label for="id_subject"></label>
-            <select name="subject" id="id_subject">
-                <option value="">Subject</option>
-                <option value="English" {% if request.POST.subject == 'English' %}selected{% endif %}>English</option>
-                <option value="French" {% if request.POST.subject == 'French' %}selected{% endif %}>French</option>
-                <option value="Math" {% if request.POST.subject == 'Math' %}selected{% endif %}>Math</option>            
-                <option value="Science" {% if request.POST.subject == 'Science' %}selected{% endif %}>Science</option>
-                <option value="Chemistry" {% if request.POST.subject == 'Chemistry' %}selected{% endif %}>Chemistry</option>
-            </select>
-        </div>
-  
-        <div>
-            <label for="id_level"></label>
-            <select name="level" id="id_level">
-                <option value="">Level</option>
-                <option value="Kindergarten" {% if request.POST.level == 'Kindergarten' %}selected{% endif %}>Kindergarten</option>
-                <option value="Primary Education" {% if request.POST.level == 'Primary Education' %}selected{% endif %}>Primary Education</option>
-                <option value=" Secondary Education" {% if request.POST.level == ' Secondary Education' %}selected{% endif %}> Secondary Education</option>
-                <option value="Cegep" {% if request.POST.level == 'Cegep' %}selected{% endif %}>Cegep</option>
-                <option value="University" {% if request.POST.level == 'University' %}selected{% endif %}>University</option>
-            </select>
-        </div>
-  
-        <div>
-            <label for="id_price"></label>
-            <select name="price" id="id_price">
-                <option value="">Price</option>
-                <option value="20-29" {% if request.POST.price == '20-29' %}selected{% endif %}>20-29</option>
-                <option value="30-39" {% if request.POST.price == '30-39' %}selected{% endif %}>30-39</option>
-                <option value="40-49" {% if request.POST.price == '40-49' %}selected{% endif %}>40-49</option>
-                <option value="50-59" {% if request.POST.price == '50-59' %}selected{% endif %}>50-59</option>
-                <option value="60-69" {% if request.POST.price == '60-69' %}selected{% endif %}>60-69</option>
-                <option value="70-99" {% if request.POST.price == '70-99' %}selected{% endif %}>70-99</option>
-            </select>
-        </div>
-  
-        <div>
-            <label for="id_gender"></label>
-            <select name="gender" id="id_gender">
-                <option value="">Gender</option> 
-                <option value="Male" {% if request.POST.gender == 'Male' %}selected{% endif %}>Male</option>
-                <option value="Female" {% if request.POST.gender == 'Female' %}selected{% endif %}>Female</option>
-                <option value="Other" {% if request.POST.gender == 'Other' %}selected{% endif %}>Other</option>
-            </select>
-        </div>
-  
-        <div>
-            <label for="id_filter_method"></label>
-            <select name="filter_method" id="id_filter_method">
-                <option value="">Method</option>
-                <option value="Online" {% if request.POST.filter_method == 'Online' %}selected{% endif %}>online</option>
-                <option value="In-person" {% if request.POST.filter_method == 'In-person' %}selected{% endif %}>In-person</option>
-                <option value="Blended" {% if request.POST.filter_method == 'Blended' %}selected{% endif %}>Blended learning</option>
-            </select>
-        </div>
-          <div class="submit-container">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-      </form>
+        <h1>Tutors that fit your schedule</h1>
+        <p>Find the perfect private tutor and Free Video Meetings. Then book one-to one Online Lessons to fit your schedule.</p>
+        <form method="POST" action="{% url 'tutor_search' %}">
+          {% csrf_token %}
+          <div>
+              <label for="id_subject"></label>
+              <select name="subject" id="id_subject" onchange="this.form.submit()">
+                  <option value="">All Subjects</option>
+                  {% for subject in subjects %}
+                      <option value="{{ subject.name }}" {% if request.POST.subject == subject.name %}selected{% endif %}>
+                          {{ subject.name }}
+                      </option>
+                  {% endfor %}
+              </select>
+          </div>
+      
+          <div>
+              <label for="id_level"></label>
+              <select name="level" id="id_level" onchange="this.form.submit()">
+                  <option value="">All Levels</option>
+                  {% for level in levels %}
+                      <option value="{{ level.name }}" {% if request.POST.level == level.name %}selected{% endif %}>
+                          {{ level.name }}
+                      </option>
+                  {% endfor %}
+              </select>
+          </div>
+      
+          <div>
+              <label for="id_price"></label>
+              <select name="price" id="id_price" onchange="this.form.submit()">
+                  <option value="">All Prices</option>
+                  {% for price in price_ranges %}
+                      <option value="{{ price.value }}" {% if request.POST.price == price.value %}selected{% endif %}>
+                          {{ price.label }}
+                      </option>
+                  {% endfor %}
+              </select>
+          </div>
+      
+          <div>
+              <label for="id_gender"></label>
+              <select name="gender" id="id_gender" onchange="this.form.submit()">
+                  <option value="">All Genders</option>
+                  {% for gender in genders %}
+                      <option value="{{ gender.value }}" {% if request.POST.gender == gender.value %}selected{% endif %}>
+                          {{ gender.label }}
+                      </option>
+                  {% endfor %}
+              </select>
+          </div>
+      
+          <div>
+              <label for="id_method"></label>
+              <select name="method" id="id_method" onchange="this.form.submit()">
+                  <option value="">All Methods</option>
+                  {% for method in methods %}
+                      <option value="{{ method.value }}" {% if request.POST.method == method.value %}selected{% endif %}>
+                          {{ method.label }}
+                      </option>
+                  {% endfor %}
+              </select>
+          </div>
+      
+          <noscript>
+              <button type="submit">Filter</button>
+          </noscript>
+      </form>      
     </div>
   </section>
   <!-- end of filters -->
@@ -88,14 +92,21 @@
           {% else %}
             <img src="{% static 'images/default-profile.png' %}" alt="Default Tutor Image">
           {% endif %}
-          <h4>{{ tutor.name }}</h4>
-          <p>{{ tutor.description|default:"Experienced tutor ready to help you succeed!" }}</p >
-          <p><strong>Experience:</strong> {{ tutor.experience|default:"Not provided" }}</p >
-          <p><strong>Method:</strong> {{ tutor.get_method_display }}</p >
-            
+            <h4>{{ tutor.name }}</h4>
+            <p><strong>Experience:</strong> {{ tutor.experience|default:"Not provided" }}</p >
+            <p><strong>Method:</strong> {{ tutor.method }}</p >
+            <p><strong>Subjects:</strong>
+                {% for subject in tutor.subject_list.all %}
+                    {{ subject.name }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </p>
+            <p><strong>Levels:</strong>
+                {% for level in tutor.level_list.all %}
+                    {{ level.name }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </p>
           <!-- Solid line separator -->
           <hr class="separator">
-
           <!-- Hourly rate container -->
           <div class="hourly-rate">
             <span class="rate">${{ tutor.hourly_rate|default:"N/A" }} /hr</span>
@@ -111,15 +122,15 @@
       </div>
     </div>
     <!-- Book Tutor start-->
-  <section class="start search-start">
-    <div class="container">
-      <h2>
-        Book a free meeting with a tutor today and find out how they can help your
-        child
-      </h2>
-      <a href="#" class="btn btn-primary">Book Tutor</a>
-    </div>
-  </section>
-<!-- end of Book Tutor start -->
+    <section class="start search-start">
+        <div class="container">
+        <h2>
+            Book a free meeting with a tutor today and find out how they can help your
+            child
+        </h2>
+        <a href="#" class="btn btn-primary">Book Tutor</a>
+        </div>
+    </section>
+    <!-- end of Book Tutor start -->
 </section>
 {% endblock %}

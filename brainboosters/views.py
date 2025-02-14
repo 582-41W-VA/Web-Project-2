@@ -58,36 +58,6 @@ def user_logout(request):
     logout(request)
     return redirect('login')
 
-def tutor_search(request):
-    tutors = TutorProfile.objects.all()
-    
-    if request.method == "POST":
-        form = TutorSearchForm(request.POST)
-
-        if form.is_valid():
-            subject = form.cleaned_data.get("subject")
-            level = form.cleaned_data.get("level")
-            price = form.cleaned_data.get("price")
-            gender = form.cleaned_data.get("gender")
-            method = form.cleaned_data.get("filter_method")
-
-            if subject:
-                tutors = tutors.filter(major=subject)  
-            if level is not None:
-                tutors = tutors.filter(degree=level)  
-            if price is not None:
-                tutors = tutors.filter(hourly_rate=price)
-            if gender is not None:
-                tutors = tutors.filter(gender=gender) 
-            if method is not None:
-                tutors = tutors.filter(method=method) 
-
-    
-    else:
-        form = TutorSearchForm()
-
-    return render(request, 'brainboosters/search.html', {"tutors": tutors})
-
 
 @login_required
 def create_tutor_profile(request):
@@ -232,3 +202,27 @@ def tutor_detail(request, tutor_id):
         'contact_form': contact_form,
     }
     return render(request, 'brainboosters/tutor_detail.html', context)
+
+
+def tutor_search(request):
+    tutors = TutorProfile.objects.all()
+
+    subject = request.POST.get('subject')
+    level = request.POST.get('level')
+    price = request.POST.get('price')
+    gender = request.POST.get('gender')
+    method = request.POST.get('method')
+
+    if subject:
+        tutors = tutors.filter(subject_list__name=subject)
+    if level:
+        tutors = tutors.filter(level_list__name=level)
+    if price:
+            min_price, max_price = map(int, price.split('-'))
+            tutors = tutors.filter(hourly_rate__gte=min_price, hourly_rate__lte=max_price)
+    if gender:
+        tutors = tutors.filter(gender=gender)
+    if method:
+        tutors = tutors.filter(method=method)
+
+    return render(request, 'brainboosters/search.html', {'tutors': tutors})

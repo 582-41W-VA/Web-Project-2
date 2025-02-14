@@ -23,13 +23,13 @@ class User(AbstractUser):
 class TutorProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='tutor_profile')
     name = models.CharField(max_length=80, null=True, blank=True)
-    gender = models.CharField(max_length=10, choices=[('M', 'Male'), ('F', 'Female')], null=True, blank=True)
+    gender = models.CharField(max_length=10, choices=[('Male', 'Male'), ('Female', 'Female')], null=True, blank=True)
     degree = models.CharField(
         max_length=10, 
         choices=[
-            ('bachelor', 'Bachelor'),
-            ('master', 'Master'),
-            ('doctor', 'Doctor'),
+            ('Bachelor', 'Bachelor'),
+            ('Master', 'Master'),
+            ('Ph.D.', 'Ph.D.'),
         ], 
         null=True, 
         blank=True
