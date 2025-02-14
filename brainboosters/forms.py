@@ -32,35 +32,30 @@ class UserRegisterForm(UserCreationForm):
             raise forms.ValidationError("You must select either 'Tutor' or 'Parent'.")
         return user_type
 
+
 class UserLoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Username'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
 
-class TutorSearchForm(forms.Form):     
-    subject = forms.CharField(required=False, label="Subject")
-    level = forms.CharField(required=False, label="CharField")
-    price = forms.DecimalField(required=False, label="Price")
-    gender = forms.CharField(required=False, label="Gender")
-    method = forms.CharField(required=False, label="Method")
 
 class TutorProfileForm(forms.ModelForm):
     name = forms.CharField(required=True)
     profile_picture = forms.ImageField(required=False)
     GENDER_CHOICES = [
-        ('M', 'Male'),
-        ('F', 'Female'),
+        ('Male', 'Male'),
+        ('Female', 'Female'),
     ]
 
     DEGREE_CHOICES = [
-        ('bachelor', 'Bachelor'),
-        ('master', 'Master'),
-        ('doctor', 'Doctor'),
+        ('Bachelor', 'Bachelor'),
+        ('Master', 'Master'),
+        ('Ph.D.', 'Ph.D.'),
     ]
 
     METHOD_CHOICES = [
-        ('online', 'Online'),
-        ('in_person', 'In Person'),
-        ('hybrid', 'Hybrid'),
+        ('Online', 'Online'),
+        ('In-Person', 'In-Person'),
+        ('Online & In-Person', 'Online & In-Person'),
     ]
 
     gender = forms.ChoiceField(choices=GENDER_CHOICES, required=True, widget=forms.Select(attrs={'class': 'form-control'}))
@@ -80,14 +75,8 @@ class ParentProfileForm(forms.ModelForm):
         model = ParentProfile
         fields = ['name', 'location', 'child_name', 'child_age', 'child_grade']
 
-
-# class ContactForm(forms.Form):
-#     name = forms.CharField(max_length=100)
-#     email = forms.EmailField()
-#     message = forms.CharField(widget=forms.Textarea)
-
 class ContactForm(forms.Form):
     first_name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': 'First Name'}))
     last_name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': 'Last Name'}))
-    email = forms.EmailField(widget=forms.EmailInput(attrs={'placeholder': 'Email'}))
-    message = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Message'}))
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'placeholder': 'Email'}), required=True)
+    message = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Message'}), required=True)

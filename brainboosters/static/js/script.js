@@ -86,3 +86,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 // Responsive Menu End
+
+
+// Initialize EmailJS
+emailjs.init("Sov9QXcN7STkhherR"); 
+
+// Handle form submission
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const form = event.target;
+
+  // Collect form data
+  const formData = {
+    name: form.name.value,
+    email: form.email.value,
+    message: form.message.value,
+  };
+  const templateParams = {
+      from_name: form.name.value,
+      to_name: "",
+      message: form.message.value,
+      reply_to: form.email.value,
+  };
+
+  // Send the email using EmailJS
+  emailjs.send("service_4l3agts", "template_kgyv5yl", formData)
+    .then(response => {
+      alert("Your message has been sent successfully!");
+      form.reset(); 
+    })
+    .catch(error => {
+      console.error("Error sending email:", error);
+      alert("Failed to send your message. Please try again later.");
+    });
+});
