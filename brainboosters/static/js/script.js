@@ -98,11 +98,11 @@ document.getElementById("contactForm").addEventListener("submit", function (even
   const form = event.target;
 
   // Collect form data
-  const formData = {
-    name: form.name.value,
-    email: form.email.value,
-    message: form.message.value,
-  };
+  // const templateParams = {
+  //   name: form.name.value,
+  //   email: form.email.value,
+  //   message: form.message.value,
+  // };
   const templateParams = {
       from_name: form.name.value,
       to_name: "",
@@ -111,7 +111,7 @@ document.getElementById("contactForm").addEventListener("submit", function (even
   };
 
   // Send the email using EmailJS
-  emailjs.send("service_4l3agts", "template_kgyv5yl", formData)
+  emailjs.send("service_4l3agts", "template_tcz0sbg", templateParams)
     .then(response => {
       alert("Your message has been sent successfully!");
       form.reset(); 
