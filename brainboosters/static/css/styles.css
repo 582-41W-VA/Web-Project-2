@@ -1028,7 +1028,11 @@ input:-webkit-autofill {
 }
 
 .tutor-detail-margin {
-  margin-bottom: 40px;
+  margin-bottom: 24px;
+}
+
+.tutor-detail-margin-p {
+  padding-bottom: 16px;
 }
 
 .hourly-rates {
@@ -1049,6 +1053,8 @@ input:-webkit-autofill {
 .rating-info {
   font-size: 16px;
   margin-bottom: 24px;
+  font-weight: bold;
+  gap: 16px;
 }
 
 .star-icon {
@@ -1080,6 +1086,7 @@ input:-webkit-autofill {
 
 .review p {
   margin: 8px 0;
+  /* line-height: 1.5; */
 }
 
 .review strong {
@@ -1091,10 +1098,31 @@ input:-webkit-autofill {
   color: #777;
 }
 
-/* .contact-form input,
-.contact-form textarea {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-} */
+/* Submit Review Form */
+.review-form {
+  background-color: #f7f2ed;
+  padding: 8px 24px 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 48px;
+}
+
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.review-form textarea {
+  min-height: 88px;
+}
+
+.review-form label {
+  /* padding: 5px; */
+  margin: 24px 0;
+}
 
 /* Placeholder text color */
 .contact-form input::placeholder,
@@ -1104,7 +1132,7 @@ input:-webkit-autofill {
 
 .contact-form {
   background-color: #f7f2ed;
-  padding: 26px;
+  padding: 24px;
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
@@ -1121,6 +1149,7 @@ input:-webkit-autofill {
   flex-direction: column;
   background-color: #fafafa;
   padding: 10px;
+  margin-bottom: 16px;
 }
 
 .input-box input,
@@ -1590,7 +1619,7 @@ input:-webkit-autofill {
     flex-direction: column;
     gap: 10px;
   }
-
+  .review-form .btn-primary,
   .contact-form .btn-primary {
     /* font-size: 24px; */
     padding: 8px 16px;
@@ -1598,6 +1627,32 @@ input:-webkit-autofill {
 }
 /* Responsive size 480 */
 @media (max-width: 480px) {
+  /* Tutor-Details Page */
+  .auth-container.tutor-details h4 {
+    text-align: center;
+  }
+
+  .rating-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
+  .star-icon {
+    font-size: 18px;
+    margin-right: 5px;
+  }
+
+  .rating-info span {
+    margin-left: 5px;
+  }
+  .auth-container.tutor-details .btn-primary {
+    margin-top: 0;
+  }
+
+  /* Footer */
   footer {
     padding: 40px 0;
   }

@@ -5,7 +5,7 @@
 
 <div class="auth-container tutor-details">
   <div class="form-container">
-    <!-- Tutor Image and Name Section -->
+    <!-- Tutor Image and Name section -->
     <div class="tutor-image-name">
       <img
         src="{{ tutor.user.profile_picture }}"
@@ -25,7 +25,7 @@
 
     <!-- About Me Section -->
     <h4>About Me</h4>
-    <p class="tutor-detail-margin">{{ tutor.description }}</p>
+    <p class="tutor-detail-margin-p">{{ tutor.description }}</p>
 
     <!-- Ratings & Reviews Section -->
     <h4>Ratings & Reviews</h4>
@@ -48,20 +48,32 @@
         {% endif %}
       </div>
     </div>
-
+    <!-- Your Review Section -->
+    <h4 class="tutor-detail-margin">Your Review</h4>
     {% if user.is_authenticated and user.user_type == 'parent' %}
+    <div class="review-form">
     <form method="post">
-        {% csrf_token %}
-        <label for="rating">Rating:</label>
-        <input type="number" name="rating" min="1" max="5" required>
-        <label for="comment">Comment:</label>
-        <textarea name="comment" required></textarea>
-        <button type="submit" name="submit_review">Submit Review</button>
+      {% csrf_token %}
+      <label for="rating">Rating:</label>
+      <div class="name-fields">
+        <div class="input-box">
+          
+          <input type="number" name="rating" min="1" max="5" required placeholder="Enter rating (1-5)">
+        </div>
+      </div>
+      <label for="comment">Comment:</label>
+      <div class="input-box">
+        
+        <textarea name="comment" required placeholder="Write your review here..."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary" name="submit_review">Submit Review</button>
     </form>
+  </div>
     {% else %}
         <p>You must be logged in as a parent to submit a review.</p>
     {% endif %}
-
+    <!-- Contact Me Section -->
     <h4 class="tutor-detail-margin">Contact Me</h4>
     <div class="contact-form">
       {% if user.is_authenticated and user.user_type == 'parent' %}
