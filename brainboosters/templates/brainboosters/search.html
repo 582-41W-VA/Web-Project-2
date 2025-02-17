@@ -86,36 +86,38 @@
       <p class="tutor-card-filters">Thousands of parents, students, and teachers have rated us 4.96/5</p>
       <div class="cards">
         {% for tutor in tutors %}
-        <article class="card">
-          {% if tutor.user.profile_picture %}
-            <img src="{{ tutor.user.profile_picture.url }}" alt="Tutor {{ tutor.name }}">
-          {% else %}
-            <img src="{% static 'images/default-profile.png' %}" alt="Default Tutor Image">
-          {% endif %}
-            <h4>{{ tutor.name }}</h4>
-            <p><strong>Experience:</strong> {{ tutor.experience|default:"Not provided" }}</p >
-            <p><strong>Method:</strong> {{ tutor.method }}</p >
-            <p><strong>Subjects:</strong>
-                {% for subject in tutor.subject_list.all %}
-                    {{ subject.name }}{% if not forloop.last %}, {% endif %}
-                {% endfor %}
-            </p>
-            <p><strong>Levels:</strong>
-                {% for level in tutor.level_list.all %}
-                    {{ level.name }}{% if not forloop.last %}, {% endif %}
-                {% endfor %}
-            </p>
-          <!-- Solid line separator -->
-          <hr class="separator">
-          <!-- Hourly rate container -->
-          <div class="hourly-rate">
-            <span class="rate">${{ tutor.hourly_rate|default:"N/A" }} /hr</span>
-            <div class="star-rating">
-              <span>⭐</span> <!-- Also we can dynamically adjust this if have the rating value -->
-              <span class="rating">5/5</span>
+        <a href="{% url 'tutor_detail' tutor_id=tutor.id %}">
+            <article class="card">
+            {% if tutor.user.profile_picture %}
+                <img src="{{ tutor.user.profile_picture.url }}" alt="Tutor {{ tutor.name }}">
+            {% else %}
+                <img src="{% static 'images/default-profile.png' %}" alt="Default Tutor Image">
+            {% endif %}
+                <h4>{{ tutor.name }}</h4>
+                <p><strong>Experience:</strong> {{ tutor.experience|default:"Not provided" }}</p >
+                <p><strong>Method:</strong> {{ tutor.method }}</p >
+                <p><strong>Subjects:</strong>
+                    {% for subject in tutor.subject_list.all %}
+                        {{ subject.name }}{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+                <p><strong>Levels:</strong>
+                    {% for level in tutor.level_list.all %}
+                        {{ level.name }}{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+            <!-- Solid line separator -->
+            <hr class="separator">
+            <!-- Hourly rate container -->
+            <div class="hourly-rate">
+                <span class="rate">${{ tutor.hourly_rate|default:"N/A" }} /hr</span>
+                <div class="star-rating">
+                <span>⭐</span> <!-- Also we can dynamically adjust this if have the rating value -->
+                <span class="rating">5/5</span>
+                </div>
             </div>
-          </div>
-        </article>
+            </article>
+        </a>
         {% empty %}
         <p>No tutors available at the moment. Check back soon!</p >
         {% endfor %}

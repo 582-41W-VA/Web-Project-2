@@ -9,7 +9,7 @@
           <ul>
             <li><a href="{% url 'homepage' %}">Home</a></li>
             <li class="dropdown">
-              <a href="#"
+              <a href="{% url 'tutor_search' %}"
                 >Subjects <i class="fa-solid fa-caret-down caret-icon"></i
               ></a>
               <ul class="dropdown-menu">
@@ -34,7 +34,11 @@
       </div>
       <div class="auth-buttons">
         {% if user.is_authenticated %}
-          <p>Welcome, {{ user.username }}!</p>
+          {% if user.user_type == 'tutor' %}
+            <p>Welcome, {{ user.tutor_profile.name }}!</p>
+          {% else %}
+            <p>Welcome, {{ user.parent_profile.name }}!</p>
+          {% endif %}
           <a href="{% if user.user_type == 'parent' %}{% url 'parent_dashboard' %}{% else %}{% url 'tutor_dashboard' %}{% endif %}" class="btn btn-primary">
             Dashboard
           </a>
