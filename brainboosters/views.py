@@ -48,6 +48,9 @@ def user_login(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
+                next_url = request.POST.get('next', '/')
+                if next_url:
+                    return redirect(next_url)
                 return redirect('homepage')
     else:
         form = UserLoginForm()

@@ -8,13 +8,14 @@
     <!-- Tutor Image and Name section -->
     <div class="tutor-image-name">
       <img
-        src="{{ tutor.user.profile_picture }}"
+        src="{{ tutor.user.profile_picture.url }}"
         alt="{{ tutor.name }}"
         class="tutor-image"
       />
       <div class="tutor-info">
         <h3>{{ tutor.name }}</h3>
         <p>{{ tutor.degree }}, {{ tutor.school }}, {{ tutor.major }}</p>
+        <p>{{ tutor.experience }} teaching experiences. Prefer {{tutor.method}} method.</p>
         <div class="hourly-rates">
           <span class="dollar-icon">$</span>{{ tutor.hourly_rate }} /hr
         </div>
@@ -34,13 +35,12 @@
       <div class="reviews">
         {% if reviews %} {% for review in reviews %}
         <div class="review">
-          <p><strong>Rating:</strong> {{ review.rating }} stars</p>
-          <p>{{ review.text }}</p>
-          <p>
-            <em
-              >By {{ review.parent.user.username }} on {{ review.created_at
-              }}</em
-            >
+            <p><strong>Rating:</strong> 
+                <span class="star-icon">⭐</span>{{ review.rating }}/5
+            </p>
+            <p>{{ review.text }}</p>
+            <p>
+            <em>By {{ review.parent.name }} on {{ review.created_at}}</em>
           </p>
         </div>
         {% endfor %} {% else %}
