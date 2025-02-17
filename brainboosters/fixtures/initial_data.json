@@ -1,0 +1,1252 @@
+[
+    {
+        "model": "brainboosters.user",
+        "pk": 1,
+        "fields": {
+            "username": "tutor1",
+            "first_name": "Olivia", 
+            "last_name": "Carter",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "tutor",
+            "profile_picture": "profile_pictures/OliviaCarter.jpg",
+            "contact_number": "123-456-7890",
+            "email": "tutor1@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.tutorprofile",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "name": "Olivia Carter",
+            "gender": "Female",
+            "degree": "Bachelor",
+            "school": "University of Toronto",
+            "major": "Computer Science",
+            "experience": "5 years",
+            "method": "Online & In-Person",
+            "hourly_rate": "45.00",
+            "description": "Hey there! I’m Olivia, a front-end developer who loves helping people learn how to build awesome websites. I’ve been teaching HTML, CSS, JavaScript, and React for five years, and I know how confusing coding can be when you're starting out. My goal is to make it fun and easy for you to create something amazing."
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 2,
+        "fields": {
+            "username": "tutor2",
+            "first_name": "Ethan", 
+            "last_name": "Reynolds",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "tutor",
+            "profile_picture": "profile_pictures/EthanReynolds.jpg",
+            "contact_number": "123-456-7890",
+            "email": "tutor2@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.tutorprofile",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "name": "Ethan Reynolds",
+            "gender": "Male",
+            "degree": "Master",
+            "school": "Stanford University",
+            "major": "Mathematics",
+            "experience": "8 years",
+            "method": "Online",
+            "hourly_rate": "60.00",
+            "description": "Hi! I’m Ethan, and math has been my thing for as long as I can remember. I specialize in algebra, calculus, and statistics, and I love helping students who think math is “too hard” realize that it’s just about finding the right approach. Whether you need help with test prep or advanced concepts, I’ve got you covered."
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 3,
+        "fields": {
+            "username": "tutor3",
+            "first_name": "Sophia", 
+            "last_name": "Lee",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "tutor",
+            "profile_picture": "profile_pictures/SophiaLee.jpg",
+            "contact_number": "123-456-7890",
+            "email": "tutor3@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.tutorprofile",
+        "pk": 3,
+        "fields": {
+            "user": 3,
+            "name": "Sophia Lee",
+            "gender": "Female",
+            "degree": "Bachelor",
+            "school": "McGill University",
+            "major": "English Literature",
+            "experience": "4 years",
+            "method": "Online & In-Person",
+            "hourly_rate": "40.00",
+            "description": "Hey! I’m Sophia, an English tutor who’s passionate about storytelling, literature, and helping people become stronger writers. Whether you need help structuring an essay, analyzing Shakespeare, or improving your grammar, I’m here to make it all feel less overwhelming (and maybe even fun!)."
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 4,
+        "fields": {
+            "username": "tutor4",
+            "first_name": "Noah", 
+            "last_name": "Patel",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "tutor",
+            "profile_picture": "profile_pictures/NoahPatel.jpg",
+            "contact_number": "123-456-7890",
+            "email": "tutor4@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.tutorprofile",
+        "pk": 4,
+        "fields": {
+            "user": 4,
+            "name": "Noah Patel",
+            "gender": "Male",
+            "degree": "Ph.D.",
+            "school": "Harvard University",
+            "major": "Physics",
+            "experience": "10 years",
+            "method": "Online",
+            "hourly_rate": "75.00",
+            "description": "Hi, I’m Noah! I’ve been teaching physics for over a decade, and I know how tricky it can be to wrap your head around concepts like quantum mechanics and electromagnetism. My approach is all about breaking things down into simple, real-world examples so you can actually get what’s going on. Let’s make physics make sense together!"
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 5,
+        "fields": {
+            "username": "tutor5",
+            "first_name": "Emma", 
+            "last_name": "Robinson",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "tutor",
+            "profile_picture": "profile_pictures/EmmaRobinson.jpg",
+            "contact_number": "123-456-7890",
+            "email": "tutor5@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.tutorprofile",
+        "pk": 5,
+        "fields": {
+            "user": 5,
+            "name": "Emma Robinson",
+            "gender": "Female",
+            "degree": "Bachelor",
+            "school": "University of British Columbia",
+            "major": "Psychology",
+            "experience": "3 years",
+            "method": "In-Person",
+            "hourly_rate": "35.00",
+            "description": "Hey, I’m Emma! I love helping students explore the fascinating world of psychology—whether it’s cognitive science, research methods, or just understanding human behavior better. If you ever feel stuck with your studies, don’t worry—I’ll help you break things down and actually enjoy learning."
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 6,
+        "fields": {
+            "username": "tutor6",
+            "first_name": "Liam",
+            "last_name": "Chen",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "tutor",
+            "profile_picture": "profile_pictures/LiamChen.jpg",
+            "contact_number": "123-456-7890",
+            "email": "tutor6@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.tutorprofile",
+        "pk": 6,
+        "fields": {
+            "user": 6,
+            "name": "Liam Chen",
+            "gender": "Male",
+            "degree": "Master",
+            "school": "MIT Sloan School of Management",
+            "major": "Business Administration (MBA)",
+            "experience": "6 years",
+            "method": "Online & In-Person",
+            "hourly_rate": "55.00",
+            "description": "Hi! I’m Liam, and I love talking business—marketing, finance, entrepreneurship, you name it! Whether you’re studying for an MBA, launching a startup, or just want to improve your business skills, I can help you get there. Let’s simplify the complicated stuff and make it practical!"
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 7,
+        "fields": {
+            "username": "tutor7",
+            "first_name": "Ava",
+            "last_name": "Martinez",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "tutor",
+            "profile_picture": "profile_pictures/AvaMartinez.jpg",
+            "contact_number": "123-456-7891",
+            "email": "tutor7@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.tutorprofile",
+        "pk": 7,
+        "fields": {
+            "user": 7,
+            "name": "Ava Martinez",
+            "gender": "Female",
+            "degree": "Bachelor",
+            "school": "Rhode Island School of Design",
+            "major": "Graphic Design",
+            "experience": "4 years",
+            "method": "Online",
+            "hourly_rate": "40.00",
+            "description": "Hi there! I’m Ava, a graphic designer who loves helping people get creative with digital art, UI/UX, and branding. Whether you're just starting out or looking to refine your portfolio, I’ll guide you through design principles, tools, and techniques in a way that feels fun and approachable. Let’s bring your ideas to life!"
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 8,
+        "fields": {
+            "username": "tutor8",
+            "first_name": "Lily",
+            "last_name": "Thompson",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "tutor",
+            "profile_picture": "profile_pictures/LilyThompson.jpg",
+            "contact_number": "123-456-7892",
+            "email": "tutor8@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.tutorprofile",
+        "pk": 8,
+        "fields": {
+            "user": 8,
+            "name": "Lily Thompson",
+            "gender": "Female",
+            "degree": "Bachelor",
+            "school": "University of Toronto",
+            "major": "Education",
+            "experience": "6 years",
+            "method": "Online & In-Person",
+            "hourly_rate": "30.00",
+            "description": "Hi, I’m Miss Lily! I love working with kids and making learning fun. Whether your little one needs help with math, reading, or just a confidence boost, I’m here to help! We’ll play learning games, do fun activities, and make sure school feels exciting—not stressful."
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 9,
+        "fields": {
+            "username": "tutor9",
+            "first_name": "Jake",
+            "last_name": "Wilson",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "tutor",
+            "profile_picture": "profile_pictures/JakeWilson.jpeg",
+            "contact_number": "123-456-7893",
+            "email": "tutor9@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.tutorprofile",
+        "pk": 9,
+        "fields": {
+            "user": 9,
+            "name": "Jake Wilson",
+            "gender": "Male",
+            "degree": "Bachelor",
+            "school": "University of British Columbia",
+            "major": "Biology",
+            "experience": "5 years",
+            "method": "Online & In-Person",
+            "hourly_rate": "35.00",
+            "description": "Hey there! I’m Jake, and I love teaching kids all about science in the coolest way possible. From fun experiments to nature facts that’ll blow your mind, I make sure learning feels like an adventure. Whether your child is curious about animals, space, or dinosaurs, I’ve got something exciting planned!"
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 10,
+        "fields": {
+            "username": "tutor10",
+            "first_name": "Emily",
+            "last_name": "Carter",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "tutor",
+            "profile_picture": "profile_pictures/EmilyCarter.jpg",
+            "contact_number": "123-456-7894",
+            "email": "tutor10@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.tutorprofile",
+        "pk": 10,
+        "fields": {
+            "user": 10,
+            "name": "Emily Carter",
+            "gender": "Female",
+            "degree": "Bachelor",
+            "school": "McGill University",
+            "major": "English",
+            "experience": "4 years",
+            "method": "Online",
+            "hourly_rate": "28.00",
+            "description": "Hi, I’m Emily! Do you love stories? I do too! I help kids become better readers, writers, and storytellers by making learning interactive and creative. Whether we’re writing our own fairy tales or acting out characters, my lessons are all about having fun with words!"
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 11,
+        "fields": {
+            "username": "tutor11",
+            "first_name": "Ben",
+            "last_name": "Martinez",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "tutor",
+            "profile_picture": "profile_pictures/BenMartinez.jpg",
+            "contact_number": "123-456-7895",
+            "email": "tutor11@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.tutorprofile",
+        "pk": 11,
+        "fields": {
+            "user": 11,
+            "name": "Ben Martinez",
+            "gender": "Male",
+            "degree": "Bachelor",
+            "school": "Berklee College of Music",
+            "major": "Music Education",
+            "experience": "7 years",
+            "method": "Online & In-Person",
+            "hourly_rate": "40.00",
+            "description": "Hey there, I’m Mr. Ben! Music is my passion, and I love sharing it with kids. Whether you’re just starting out on the piano or want to learn how to read music, I make lessons fun with games, songs, and even some silly challenges. Let’s make music together! 🎵"
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 12,
+        "fields": {
+            "username": "tutor12",
+            "first_name": "Sarah",
+            "last_name": "Kim",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "tutor",
+            "profile_picture": "profile_pictures/SarahKim.jpg",
+            "contact_number": "123-456-7896",
+            "email": "tutor12@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.tutorprofile",
+        "pk": 12,
+        "fields": {
+            "user": 12,
+            "name": "Sarah Kim",
+            "gender": "Female",
+            "degree": "Bachelor",
+            "school": "University of Montreal",
+            "major": "Linguistics",
+            "experience": "5 years",
+            "method": "Online",
+            "hourly_rate": "30.00",
+            "description": "Bonjour! ¡Hola! I’m Sarah, and I love teaching languages in a fun and engaging way. With songs, games, and stories, your child will learn French or Spanish naturally—just like they learned their first language! Let’s make learning a new language exciting!"
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 13,
+        "fields": {
+            "username": "tutor13",
+            "first_name": "Noah",
+            "last_name": "Williams",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "tutor",
+            "profile_picture": "profile_pictures/NoahWilliams.jpg",
+            "contact_number": "123-456-7897",
+            "email": "tutor13@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.tutorprofile",
+        "pk": 13,
+        "fields": {
+            "user": 13,
+            "name": "Noah Williams",
+            "gender": "Male",
+            "degree": "Bachelor",
+            "school": "MIT",
+            "major": "Computer Science",
+            "experience": "3 years",
+            "method": "Online",
+            "hourly_rate": "35.00",
+            "description": "Hey, I’m Noah! I love teaching kids how to code, build simple games, and explore tech in a way that’s super fun. Whether it’s Scratch, basic Python, or fun problem-solving activities, I make sure kids feel like coding is a cool superpower they can use!"
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 14,
+        "fields": {
+            "username": "tutor14",
+            "first_name": "Anna",
+            "last_name": "Rivera",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "tutor",
+            "profile_picture": "profile_pictures/AnnaRivera.jpg",
+            "contact_number": "123-456-7898",
+            "email": "tutor14@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.tutorprofile",
+        "pk": 14,
+        "fields": {
+            "user": 14,
+            "name": "Anna Rivera",
+            "gender": "Female",
+            "degree": "Bachelor",
+            "school": "Rhode Island School of Design",
+            "major": "Fine Arts",
+            "experience": "6 years",
+            "method": "Online & In-Person",
+            "hourly_rate": "32.00",
+            "description": "Hi, I’m Anna! I believe every child is an artist, and my job is to help them bring their ideas to life! Whether we’re painting, drawing, or doing fun craft projects, I make sure every lesson is a space for creativity and self-expression. Let’s make some art! 🎨"
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 15,
+        "fields": {
+            "username": "tutor15",
+            "first_name": "Daniel",
+            "last_name": "Brooks",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "tutor",
+            "profile_picture": "profile_pictures/DanielBrooks.jpg",
+            "contact_number": "123-456-7899",
+            "email": "tutor15@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.tutorprofile",
+        "pk": 15,
+        "fields": {
+            "user": 15,
+            "name": "Daniel Brooks",
+            "gender": "Male",
+            "degree": "Bachelor",
+            "school": "University of Waterloo",
+            "major": "Mathematics Education",
+            "experience": "6 years",
+            "method": "Online & In-Person",
+            "hourly_rate": "30.00",
+            "description": "Hey there, I’m Daniel! Math doesn’t have to be boring—I turn it into a game! Whether your child needs help with tricky numbers or just wants to sharpen their skills, I use puzzles, riddles, and fun activities to make learning math exciting and stress-free."
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 16,
+        "fields": {
+            "username": "tutor16",
+            "first_name": "Mia",
+            "last_name": "Johnson",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "tutor",
+            "profile_picture": "profile_pictures/MiaJohnson.jpg",
+            "contact_number": "123-456-7900",
+            "email": "tutor16@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.tutorprofile",
+        "pk": 16,
+        "fields": {
+            "user": 16,
+            "name": "Mia Johnson",
+            "gender": "Female",
+            "degree": "Bachelor",
+            "school": "New York University",
+            "major": "Communication Studies",
+            "experience": "4 years",
+            "method": "Online",
+            "hourly_rate": "35.00",
+            "description": "Hi, I’m Mia! Does your child love talking… or maybe needs a little boost in confidence? I help kids become great speakers by practicing storytelling, acting, and fun speech exercises. My goal is to make sure they feel confident and excited when they speak!"
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 17,
+        "fields": {
+            "username": "tutor17",
+            "first_name": "Alex",
+            "last_name": "Navarro",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "tutor",
+            "profile_picture": "profile_pictures/AlexNavarro.jpg",
+            "contact_number": "123-456-7901",
+            "email": "tutor17@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.tutorprofile",
+        "pk": 17,
+        "fields": {
+            "user": 17,
+            "name": "Alex Navarro",
+            "gender": "Male",
+            "degree": "Bachelor",
+            "school": "Stanford University",
+            "major": "Engineering",
+            "experience": "5 years",
+            "method": "Online & In-Person",
+            "hourly_rate": "40.00",
+            "description": "Hey, I’m Alex! Do you love building things? I teach kids how to create their own robots and gadgets using LEGO, coding, and engineering tricks. If you like hands-on learning and fun STEM challenges, this class is for you!"
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 18,
+        "fields": {
+            "username": "tutor18",
+            "first_name": "Olivia",
+            "last_name": "Sanders",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "tutor",
+            "profile_picture": "profile_pictures/OliviaSanders.jpg",
+            "contact_number": "123-456-7902",
+            "email": "tutor18@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.tutorprofile",
+        "pk": 18,
+        "fields": {
+            "user": 18,
+            "name": "Olivia Sanders",
+            "gender": "Female",
+            "degree": "Master",
+            "school": "Harvard University",
+            "major": "History",
+            "experience": "8 years",
+            "method": "Online",
+            "hourly_rate": "38.00",
+            "description": "Hi, I’m Olivia! History isn’t just about memorizing dates—it’s about amazing stories from the past! I bring history to life with cool facts, role-playing games, and fun discussions. Whether your child loves dinosaurs, ancient civilizations, or knights and castles, I’ve got an adventure ready!"
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 19,
+        "fields": {
+            "username": "tutor19",
+            "first_name": "Ryan",
+            "last_name": "Cooper",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "tutor",
+            "profile_picture": "profile_pictures/RyanCooper.jpg",
+            "contact_number": "123-456-7903",
+            "email": "tutor19@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.tutorprofile",
+        "pk": 19,
+        "fields": {
+            "user": 19,
+            "name": "Ryan Cooper",
+            "gender": "Male",
+            "degree": "Bachelor",
+            "school": "University of California LA",
+            "major": "Physical Education",
+            "experience": "7 years",
+            "method": "In-Person",
+            "hourly_rate": "30.00",
+            "description": "Hi, I’m Coach Ryan! Staying active is important, and I make fitness super fun! From obstacle courses to fun challenges, I help kids build strength, coordination, and confidence through movement. No boring workouts here—just energy and fun!"
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 20,
+        "fields": {
+            "username": "tutor20",
+            "first_name": "Zoe",
+            "last_name": "Ramirez",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "tutor",
+            "profile_picture": "profile_pictures/ZoeRamirez.jpg",
+            "contact_number": "123-456-7904",
+            "email": "tutor20@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.tutorprofile",
+        "pk": 20,
+        "fields": {
+            "user": 20,
+            "name": "Zoe Ramirez",
+            "gender": "Female",
+            "degree": "Bachelor",
+            "school": "Princeton University",
+            "major": "Game Theory & Strategy",
+            "experience": "6 years",
+            "method": "Online",
+            "hourly_rate": "32.00",
+            "description": "Hey, I’m Zoe! Want to learn how to think like a chess master? I teach kids how to play chess in a way that’s easy to understand and super fun. We’ll play games, practice strategies, and learn how to outsmart opponents—one move at a time!"
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 21,
+        "fields": {
+            "username": "tutor21",
+            "first_name": "Sam",
+            "last_name": "Evans",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "tutor",
+            "profile_picture": "profile_pictures/SamEvans.jpg",
+            "contact_number": "123-456-7905",
+            "email": "tutor21@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.tutorprofile",
+        "pk": 21,
+        "fields": {
+            "user": 21,
+            "name": "Sam Evans",
+            "gender": "Male",
+            "degree": "Bachelor",
+            "school": "University of Iowa",
+            "major": "Creative Writing",
+            "experience": "5 years",
+            "method": "Online",
+            "hourly_rate": "28.00",
+            "description": "Hey, I’m Sam! If your child loves telling stories, creating poems, or writing cool adventures, I’m here to help! I make writing fun with silly prompts, storytelling games, and creative exercises that bring their ideas to life. Let’s turn imagination into words!"
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 22,
+        "fields": {
+            "username": "tutor22",
+            "first_name": "Jasmine",
+            "last_name": "Patel",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "tutor",
+            "profile_picture": "profile_pictures/JasminePatel.jpg",
+            "contact_number": "123-456-7906",
+            "email": "tutor22@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.tutorprofile",
+        "pk": 22,
+        "fields": {
+            "user": 22,
+            "name": "Jasmine Patel",
+            "gender": "Female",
+            "degree": "Bachelor",
+            "school": "University of Toronto",
+            "major": "Early Childhood Education",
+            "experience": "6 years",
+            "method": "Online & In-Person",
+            "hourly_rate": "25.00",
+            "description": "Hi there, I’m Miss Jasmine! I love working with little learners and making sure they feel excited about school. From ABCs and numbers to fun songs and activities, I help kids build a strong foundation so they feel confident and ready for kindergarten!"
+        }
+    },
+    {
+        "model": "brainboosters.subject",
+        "pk": 1,
+        "fields": {
+            "name": "English",
+            "tutors": [1, 2, 3, 4, 5]
+        }
+    },
+    {
+        "model": "brainboosters.subject",
+        "pk": 2,
+        "fields": {
+            "name": "French",
+            "tutors": [6, 7, 8, 9, 10]
+        }
+    },
+    {
+        "model": "brainboosters.subject",
+        "pk": 3,
+        "fields": {
+            "name": "Math",
+            "tutors": [11, 12, 13, 14, 15]
+        }
+    },
+    {
+        "model": "brainboosters.subject",
+        "pk": 4,
+        "fields": {
+            "name": "Science",
+            "tutors": [16, 17, 18, 19, 20]
+        }
+    },
+    {
+        "model": "brainboosters.subject",
+        "pk": 5,
+        "fields": {
+            "name": "Chemistry",
+            "tutors": [1, 6, 11, 16, 21, 22]
+        }
+    },
+    {
+        "model": "brainboosters.level",
+        "pk": 1,
+        "fields": {
+            "name": "Kindergarten",
+            "tutors": [1, 2, 3, 4]
+        }
+    },
+    {
+        "model": "brainboosters.level",
+        "pk": 2,
+        "fields": {
+            "name": "Primary Education",
+            "tutors": [5, 6, 7, 8]
+        }
+    },
+    {
+        "model": "brainboosters.level",
+        "pk": 3,
+        "fields": {
+            "name": "Secondary Education",
+            "tutors": [9, 10, 11, 12, 13]
+        }
+    },
+    {
+        "model": "brainboosters.level",
+        "pk": 4,
+        "fields": {
+            "name": "Cegep",
+            "tutors": [14, 15, 16, 17]
+        }
+    },
+    {
+        "model": "brainboosters.level",
+        "pk": 5,
+        "fields": {
+            "name": "University",
+            "tutors": [18, 19, 20, 21, 22]
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 23,
+        "fields": {
+            "username": "parent1",
+            "first_name": "Sophia", 
+            "last_name": "Adams",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "parent",
+            "profile_picture": "profile_pictures/SophiaAdams.jpeg",
+            "contact_number": "123-456-7890",
+            "email": "parent1@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.parentprofile",
+        "pk": 1,
+        "fields": {
+            "user": 23,
+            "name": "Sophia Adams",
+            "location": "New York, NY",
+            "child_name": "Liam Adams",
+            "child_age": 10,
+            "child_grade": "5th Grade"
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 24,
+        "fields": {
+            "username": "parent2",
+            "first_name": "David",
+            "last_name": "Johnson",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "parent",
+            "profile_picture": "profile_pictures/DavidJohnson.jpg",
+            "contact_number": "123-456-7907",
+            "email": "parent2@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.parentprofile",
+        "pk": 2,
+        "fields": {
+            "user": 24,
+            "name": "David Johnson",
+            "location": "Los Angeles, CA",
+            "child_name": "Emma Johnson",
+            "child_age": 12,
+            "child_grade": "7th Grade"
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 25,
+        "fields": {
+            "username": "parent3",
+            "first_name": "Rachel",
+            "last_name": "Kim",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "parent",
+            "profile_picture": "profile_pictures/RachelKim.jpg",
+            "contact_number": "123-456-7908",
+            "email": "parent3@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.parentprofile",
+        "pk": 3,
+        "fields": {
+            "user": 25,
+            "name": "Rachel Kim",
+            "location": "Toronto, ON",
+            "child_name": "Ethan Kim",
+            "child_age": 9,
+            "child_grade": "4th Grade"
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 26,
+        "fields": {
+            "username": "parent4",
+            "first_name": "Michael",
+            "last_name": "Carter",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "parent",
+            "profile_picture": "profile_pictures/MichaelCarter.jpg",
+            "contact_number": "123-456-7909",
+            "email": "parent4@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.parentprofile",
+        "pk": 4,
+        "fields": {
+            "user": 26,
+            "name": "Michael Carter",
+            "location": "Chicago, IL",
+            "child_name": "Ava Carter",
+            "child_age": 8,
+            "child_grade": "3rd Grade"
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 27,
+        "fields": {
+            "username": "parent5",
+            "first_name": "Natalie",
+            "last_name": "White",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "parent",
+            "profile_picture": "profile_pictures/NatalieWhite.jpg",
+            "contact_number": "123-456-7910",
+            "email": "parent5@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.parentprofile",
+        "pk": 5,
+        "fields": {
+            "user": 27,
+            "name": "Natalie White",
+            "location": "Houston, TX",
+            "child_name": "Daniel White",
+            "child_age": 11,
+            "child_grade": "6th Grade"
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 28,
+        "fields": {
+            "username": "parent6",
+            "first_name": "Jessica",
+            "last_name": "Williams",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "parent",
+            "profile_picture": "profile_pictures/JessicaWilliams.jpg",
+            "contact_number": "123-456-7911",
+            "email": "parent6@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.parentprofile",
+        "pk": 6,
+        "fields": {
+            "user": 28,
+            "name": "Jessica Williams",
+            "location": "Vancouver, BC",
+            "child_name": "Sophia Williams",
+            "child_age": 10,
+            "child_grade": "5th Grade"
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 29,
+        "fields": {
+            "username": "parent7",
+            "first_name": "Matthew",
+            "last_name": "Rivera",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "parent",
+            "profile_picture": "profile_pictures/MatthewRivera.jpg",
+            "contact_number": "123-456-7912",
+            "email": "parent7@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.parentprofile",
+        "pk": 7,
+        "fields": {
+            "user": 29,
+            "name": "Matthew Rivera",
+            "location": "San Francisco, CA",
+            "child_name": "Olivia Rivera",
+            "child_age": 7,
+            "child_grade": "2nd Grade"
+        }
+    },
+    {
+        "model": "brainboosters.user",
+        "pk": 30,
+        "fields": {
+            "username": "parent8",
+            "first_name": "Laura",
+            "last_name": "Martinez",
+            "password": "pbkdf2_sha256$870000$6TZtEVtsYuZjryxTGHpbTh$B6qTIHBjtn82U+YQcA+rqoF1P0XYknWtgTDziT44BiU=",
+            "user_type": "parent",
+            "profile_picture": "profile_pictures/LauraMartinez.jpg",
+            "contact_number": "123-456-7913",
+            "email": "parent8@example.com",
+            "is_staff": false,
+            "is_active": true
+        }
+    },
+    {
+        "model": "brainboosters.parentprofile",
+        "pk": 8,
+        "fields": {
+            "user": 30,
+            "name": "Laura Martinez",
+            "location": "Miami, FL",
+            "child_name": "Jacob Martinez",
+            "child_age": 6,
+            "child_grade": "1st Grade"
+        }
+    },
+    {
+        "model": "brainboosters.review",
+        "pk": 1,
+        "fields": {
+            "tutor": 1,
+            "parent": 1,
+            "rating": 5,
+            "text": "Great tutor! Helped my child understand difficult math concepts.",
+            "created_at": "2025-02-15T21:25:16Z"
+        }
+    },
+    {
+        "model": "brainboosters.review",
+        "pk": 2,
+        "fields": {
+            "tutor": 2,
+            "parent": 2,
+            "rating": 4,
+            "text": "Very knowledgeable, but sometimes a bit fast-paced.",
+            "created_at": "2025-02-10T18:47:23Z"
+        }
+    },
+    {
+        "model": "brainboosters.review",
+        "pk": 3,
+        "fields": {
+            "tutor": 3,
+            "parent": 3,
+            "rating": 5,
+            "text": "Fantastic English tutor! My daughter’s writing skills have improved a lot.",
+            "created_at": "2025-02-09T09:15:38Z"
+        }
+    },
+    {
+        "model": "brainboosters.review",
+        "pk": 4,
+        "fields": {
+            "tutor": 4,
+            "parent": 4,
+            "rating": 5,
+            "text": "Explains physics in a way that makes it easy to understand.",
+            "created_at": "2025-02-08T20:55:12Z"
+        }
+    },
+    {
+        "model": "brainboosters.review",
+        "pk": 5,
+        "fields": {
+            "tutor": 5,
+            "parent": 5,
+            "rating": 3,
+            "text": "Decent tutor, but availability is limited.",
+            "created_at": "2025-02-07T16:25:48Z"
+        }
+    },
+    {
+        "model": "brainboosters.review",
+        "pk": 6,
+        "fields": {
+            "tutor": 6,
+            "parent": 6,
+            "rating": 4,
+            "text": "Engaging lessons, very patient and professional.",
+            "created_at": "2025-02-06T11:39:21Z"
+        }
+    },
+    {
+        "model": "brainboosters.review",
+        "pk": 7,
+        "fields": {
+            "tutor": 7,
+            "parent": 7,
+            "rating": 5,
+            "text": "Highly recommended for graphic design! Helped my son build a great portfolio.",
+            "created_at": "2025-02-05T08:44:30Z"
+        }
+    },
+    {
+        "model": "brainboosters.review",
+        "pk": 8,
+        "fields": {
+            "tutor": 8,
+            "parent": 8,
+            "rating": 4,
+            "text": "Good for beginners, but not as structured as I expected.",
+            "created_at": "2025-02-04T19:55:05Z"
+        }
+    },
+    {
+        "model": "brainboosters.review",
+        "pk": 9,
+        "fields": {
+            "tutor": 9,
+            "parent": 1,
+            "rating": 5,
+            "text": "My son loves learning biology now. Amazing tutor!",
+            "created_at": "2025-02-03T14:12:17Z"
+        }
+    },
+    {
+        "model": "brainboosters.review",
+        "pk": 10,
+        "fields": {
+            "tutor": 10,
+            "parent": 2,
+            "rating": 5,
+            "text": "Excellent music lessons, very fun and interactive.",
+            "created_at": "2025-02-02T21:05:42Z"
+        }
+    },
+    {
+        "model": "brainboosters.review",
+        "pk": 11,
+        "fields": {
+            "tutor": 11,
+            "parent": 3,
+            "rating": 5,
+            "text": "Wonderful chemistry tutor! My daughter went from failing to an A.",
+            "created_at": "2025-02-01T17:55:30Z"
+        }
+    },
+    {
+        "model": "brainboosters.review",
+        "pk": 12,
+        "fields": {
+            "tutor": 12,
+            "parent": 4,
+            "rating": 3,
+            "text": "Knows the subject well but needs better communication skills.",
+            "created_at": "2025-01-30T10:32:09Z"
+        }
+    },
+    {
+        "model": "brainboosters.review",
+        "pk": 13,
+        "fields": {
+            "tutor": 13,
+            "parent": 5,
+            "rating": 4,
+            "text": "Good tutor, but could provide more exercises for practice.",
+            "created_at": "2025-01-29T15:20:50Z"
+        }
+    },
+    {
+        "model": "brainboosters.review",
+        "pk": 14,
+        "fields": {
+            "tutor": 14,
+            "parent": 6,
+            "rating": 5,
+            "text": "Helped my child become more confident in public speaking.",
+            "created_at": "2025-01-28T13:40:37Z"
+        }
+    },
+    {
+        "model": "brainboosters.review",
+        "pk": 15,
+        "fields": {
+            "tutor": 15,
+            "parent": 7,
+            "rating": 4,
+            "text": "Great tutor for calculus, very patient and clear.",
+            "created_at": "2025-01-27T09:50:18Z"
+        }
+    },
+    {
+        "model": "brainboosters.review",
+        "pk": 16,
+        "fields": {
+            "tutor": 16,
+            "parent": 8,
+            "rating": 5,
+            "text": "Highly skilled in computer science! My son learned coding quickly.",
+            "created_at": "2025-01-26T11:05:14Z"
+        }
+    },
+    {
+        "model": "brainboosters.review",
+        "pk": 17,
+        "fields": {
+            "tutor": 17,
+            "parent": 1,
+            "rating": 3,
+            "text": "Decent, but reschedules lessons often.",
+            "created_at": "2025-01-25T20:18:29Z"
+        }
+    },
+    {
+        "model": "brainboosters.review",
+        "pk": 18,
+        "fields": {
+            "tutor": 18,
+            "parent": 2,
+            "rating": 5,
+            "text": "Fantastic literature tutor, very passionate and engaging.",
+            "created_at": "2025-01-24T14:37:55Z"
+        }
+    },
+    {
+        "model": "brainboosters.review",
+        "pk": 19,
+        "fields": {
+            "tutor": 19,
+            "parent": 3,
+            "rating": 4,
+            "text": "Knows physics well but can be a bit strict.",
+            "created_at": "2025-01-23T08:44:39Z"
+        }
+    },
+    {
+        "model": "brainboosters.review",
+        "pk": 20,
+        "fields": {
+            "tutor": 20,
+            "parent": 4,
+            "rating": 5,
+            "text": "Great mentor! Helped my son prepare for university entrance exams.",
+            "created_at": "2025-01-22T17:25:33Z"
+        }
+    },
+    {
+        "model": "brainboosters.review",
+        "pk": 21,
+        "fields": {
+            "tutor": 21,
+            "parent": 5,
+            "rating": 4,
+            "text": "Highly knowledgeable, but homework load is heavy.",
+            "created_at": "2025-01-21T12:48:11Z"
+        }
+    },
+    {
+        "model": "brainboosters.review",
+        "pk": 22,
+        "fields": {
+            "tutor": 22,
+            "parent": 6,
+            "rating": 5,
+            "text": "Excellent chemistry lessons, my daughter now loves science!",
+            "created_at": "2025-01-20T10:15:29Z"
+        }
+    }
+]
