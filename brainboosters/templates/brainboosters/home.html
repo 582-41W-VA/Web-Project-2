@@ -137,7 +137,7 @@
 
 <!-- Tutor Cards -->
 <section class="tutor-card">
-  <div class="container">
+  <div class="container home-container">
     <h2>Our Awesome Teachers</h2>
     <p class="tutor-card-p">
       Thousands of parents, students, and teachers have rated us 4.96/5
@@ -151,7 +151,7 @@
           <img src="{% static 'images/default-profile.png' %}" alt="Default Tutor Image">
         {% endif %}
         <h4>{{ tutor.name }}</h4>
-        <p>{{ tutor.description|default:"Experienced tutor ready to help you succeed!" }}</p>
+        <p class="tutor-card-exp">{{ tutor.description|default:"Experienced tutor ready to help you succeed!" }}</p>
         <!--p><strong>Experience:</strong> {{ tutor.experience|default:"Not provided" }}</p>
         <p><strong>Method:</strong> {{ tutor.get_method_display }}</p>
         <p><strong>Hourly Rate:</strong> ${{ tutor.hourly_rate|default:"N/A" }}</p-->

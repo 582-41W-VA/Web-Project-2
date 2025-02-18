@@ -455,9 +455,14 @@ section .tutor-card-p {
 
 section.tutor-card .cards {
   display: flex;
-  justify-content: space-between;
-  gap: 76px;
+  justify-content: flex-start;
+  /* gap: 76px; */
   flex-wrap: wrap;
+}
+
+/* Home page 3 cards per row with larger gap than search page */
+.home-container .cards {
+  gap: 76px;
 }
 
 section.tutor-card .card {
@@ -916,6 +921,28 @@ input:-webkit-autofill {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Search page - 4 cards per row with smaller gap then home page */
+.search-container .cards {
+  gap: 24px;
+}
+
+/* 4 cards per row */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(250px, 1fr));
+  gap: 24px;
+  justify-content: center;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.04);
+}
+
 /* Filters Submit button */
 .submit-container {
   width: 100%;
@@ -1285,6 +1312,10 @@ input:-webkit-autofill {
     width: 180px;
     height: 180px;
   }
+
+  section.tutor-card .cards {
+    justify-content: center;
+  }
 }
 
 /* Responsive size 768 */
@@ -1467,7 +1498,8 @@ input:-webkit-autofill {
     font-size: 14px;
     margin-bottom: 28px;
   }
-  section.tutor-card .card p {
+  
+ .tutor-card-exp {
     padding: 0 40px;
   }
 
