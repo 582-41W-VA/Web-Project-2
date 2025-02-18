@@ -113,7 +113,7 @@
                 <span class="rate">${{ tutor.hourly_rate|default:"N/A" }} /hr</span>
                 <div class="star-rating">
                 <span>⭐</span> <!-- Also we can dynamically adjust this if have the rating value -->
-                <span class="rating">5/5</span>
+                <span class="rating">{{ tutor.average_rating|floatformat:1 }}/5</span>
                 </div>
             </div>
             </article>
