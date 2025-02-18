@@ -30,6 +30,7 @@
 
     <!-- Ratings & Reviews Section -->
     <h4 class="tutor-detail-margin">Ratings & Reviews</h4>
+    <div class="rating-info"><span class="star-icon">⭐</span> {{ average_rating|floatformat:1 }}/5</div>
     <div class="reviews-box">
       <div class="reviews">
         {% if reviews %} {% for review in reviews %}

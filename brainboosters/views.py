@@ -1,8 +1,8 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
-from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist
+from django.db.models import Avg
 from .forms import ContactForm, ParentProfileForm, TutorProfileForm, UserRegisterForm, UserLoginForm
 from .models import TutorProfile, Review, ParentProfile
 import random
@@ -188,6 +188,7 @@ def edit_parent_profile(request, pk):
 def tutor_detail(request, tutor_id):
     tutor = get_object_or_404(TutorProfile, id=tutor_id)
     reviews = tutor.tutor_reviews.all()
+    average_rating = reviews.aggregate(Avg('rating'))['rating__avg']
 
     if request.method == 'POST':
         if 'submit_review' in request.POST:
@@ -206,6 +207,7 @@ def tutor_detail(request, tutor_id):
     context = {
         'tutor': tutor,
         'reviews': reviews,
+        'average_rating': average_rating,
         'contact_form': contact_form,
     }
     return render(request, 'brainboosters/tutor_detail.html', context)
@@ -231,5 +233,7 @@ def tutor_search(request):
         tutors = tutors.filter(gender=gender)
     if method:
         tutors = tutors.filter(method=method)
+
+    tutors = tutors.annotate(average_rating=Avg('tutor_reviews__rating'))
 
     return render(request, 'brainboosters/search.html', {'tutors': tutors})
