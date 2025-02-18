@@ -47,9 +47,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     if (this.classList.contains("active")) {
+      const welcomeMessage = authButtons.querySelector("p");
+      navItems.insertBefore(welcomeMessage, navItems.firstChild);
       navItems.appendChild(mobileAuthButtons);
+
+      // Welcome Name! message change color, emoji, and font-weight for the  when mobile menu is active
+      welcomeMessage.style.color = "#C63D9F";
+      welcomeMessage.style.fontWeight = "700";
+      welcomeMessage.style.fontSize = "18px";
+      welcomeMessage.style.marginBottom = "18px";
+
+      // Emoji
+      welcomeMessage.innerHTML = "👋 " + welcomeMessage.innerText.trim();
     } else {
+      const welcomeMessage = authButtons.querySelector("p");
+      navItems.appendChild(welcomeMessage);
       mobileAuthButtons.remove();
+
+      // Reset styles when mobile menu is inactive
+      welcomeMessage.style.color = "";
+      welcomeMessage.style.fontWeight = "";
+      welcomeMessage.style.fontSize = "";
+      welcomeMessage.style.marginBottom = "";
+      // Emoji correctly placed
+      welcomeMessage.innerHTML = welcomeMessage.innerText.trim();
     }
   });
 
@@ -60,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-/*  const userTypeLabels = document.querySelectorAll('.user-type-label');
+  /*  const userTypeLabels = document.querySelectorAll('.user-type-label');
 
   userTypeLabels.forEach(label => {
     label.addEventListener('click', function() {
@@ -72,52 +93,55 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });*/
   const userTypeInputs = document.querySelectorAll('input[name="user_type"]');
-  userTypeInputs.forEach(input => {
-      if (input.checked) {
-          input.parentElement.classList.add('active');
+  userTypeInputs.forEach((input) => {
+    if (input.checked) {
+      input.parentElement.classList.add("active");
+    }
+    input.addEventListener("change", function () {
+      userTypeInputs.forEach((inp) =>
+        inp.parentElement.classList.remove("active")
+      );
+      if (this.checked) {
+        this.parentElement.classList.add("active");
       }
-      input.addEventListener('change', function() {
-          userTypeInputs.forEach(inp => inp.parentElement.classList.remove('active'));
-          if (this.checked) {
-              this.parentElement.classList.add('active');
-          }
-      });
+    });
   });
-
 });
 // Responsive Menu End
 
-
 // Initialize EmailJS
-emailjs.init("Sov9QXcN7STkhherR"); 
+emailjs.init("Sov9QXcN7STkhherR");
 
 // Handle form submission
-document.getElementById("contactForm").addEventListener("submit", function (event) {
-  event.preventDefault();
+document
+  .getElementById("contactForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
 
-  const form = event.target;
+    const form = event.target;
 
-  // Collect form data
-  // const templateParams = {
-  //   name: form.name.value,
-  //   email: form.email.value,
-  //   message: form.message.value,
-  // };
-  const templateParams = {
+    // Collect form data
+    // const templateParams = {
+    //   name: form.name.value,
+    //   email: form.email.value,
+    //   message: form.message.value,
+    // };
+    const templateParams = {
       from_name: form.name.value,
       to_name: "",
       message: form.message.value,
       reply_to: form.email.value,
-  };
+    };
 
-  // Send the email using EmailJS
-  emailjs.send("service_4l3agts", "template_tcz0sbg", templateParams)
-    .then(response => {
-      alert("Your message has been sent successfully!");
-      form.reset(); 
-    })
-    .catch(error => {
-      console.error("Error sending email:", error);
-      alert("Failed to send your message. Please try again later.");
-    });
-});
+    // Send the email using EmailJS
+    emailjs
+      .send("service_4l3agts", "template_tcz0sbg", templateParams)
+      .then((response) => {
+        alert("Your message has been sent successfully!");
+        form.reset();
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+        alert("Failed to send your message. Please try again later.");
+      });
+  });
