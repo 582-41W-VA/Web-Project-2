@@ -141,7 +141,67 @@ nav .auth-buttons {
   gap: 24px;
   flex: 0 0 auto;
   margin-left: auto;
+  justify-content: center; /* Center Welcome Name! */
+  align-items: center;
 }
+
+ /* Adjusts spacing between the welcome message and buttons */
+nav .auth-buttons p {
+  font-size: 18px;
+  font-weight: 700;
+  color: #C63D9F;
+  padding-right: 15px;
+  margin: 0;
+  display: inline-block;
+}
+
+nav .auth-buttons p::before {
+  content: '👋';
+  font-size: 22px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Nav submenu */
+nav ul li.dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 10;
+  flex-direction: column;
+  visibility: hidden;
+  opacity: 0; 
+  transform: translateY(-10px);
+  transition: visibility 0s 0.3s, opacity 0.3s ease, transform 0.3s ease; 
+}
+
+/* Keyframe animation for gradual opening */
+@keyframes dropdownAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(5px);
+  }
+}
+
+/* Keyframe animation when hovering */
+nav ul li.dropdown:hover .dropdown-menu {
+  visibility: visible;
+  animation: dropdownAnimation 0.5s forwards;
+}
+
+/* For Responsive Menu, add the active class dynamically */
+nav ul li.dropdown.active .dropdown-menu {
+  visibility: visible;
+  animation: dropdownAnimation 0.5s forwards;
+}
+
 
 nav .auth-buttons a {
   font-size: 24px;
@@ -496,7 +556,7 @@ section.start h2 {
 
 /* Footer */
 footer {
-  background-color: #f7f5eb;
+  background-color: #f7f2ed;
   color: #000000;
   padding: 88px 0;
   font-size: 14px;
