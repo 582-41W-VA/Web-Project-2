@@ -143,6 +143,11 @@ nav .auth-buttons {
   margin-left: auto;
 }
 
+nav .auth-buttons p{
+  padding: 20px 0;
+  font-size: 24px;
+}
+
 nav .auth-buttons a {
   font-size: 24px;
   font-weight: 400;
@@ -173,6 +178,7 @@ nav ul li.dropdown {
 }
 
 nav ul li.dropdown .dropdown-menu {
+  padding: 20px 0;
   display: none;
   position: absolute;
   top: 100%;
@@ -221,7 +227,7 @@ nav .nav-items ul li a {
 
 nav .btn-primary,
 nav .btn-secondary {
-  padding: 14px 27px;
+  padding: 20px 27px;
   border-radius: 7px;
   font-weight: bold;
   transition: background-color 0.3s, color 0.3s;
