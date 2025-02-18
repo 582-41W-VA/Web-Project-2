@@ -233,7 +233,7 @@ def tutor_search(request):
         tutors = tutors.filter(gender=gender)
     if method:
         tutors = tutors.filter(method=method)
-    
-    tutors = TutorProfile.objects.annotate(average_rating=Avg('tutor_reviews__rating'))
+
+    tutors = tutors.annotate(average_rating=Avg('tutor_reviews__rating'))
 
     return render(request, 'brainboosters/search.html', {'tutors': tutors})
