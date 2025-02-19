@@ -164,6 +164,7 @@ nav .auth-buttons p::before {
 
 /* Nav submenu */
 nav ul li.dropdown .dropdown-menu {
+  padding: 20px 0;
   position: absolute;
   top: 100%;
   left: 0;
