@@ -500,7 +500,7 @@ section.tutor-card {
 }
 
 .tutor-card .container {
-  max-width: 1130px;
+  max-width: 1150px;
 }
 
 section.tutor-card h2 {
@@ -515,7 +515,7 @@ section .tutor-card-p {
 
 section.tutor-card .cards {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   /* gap: 76px; */
   flex-wrap: wrap;
 }
@@ -534,7 +534,7 @@ section.tutor-card .card {
 }
 
 section.tutor-card .card img {
-  width: 200px;
+  width: 190px;
   height: 180px;
   object-fit: cover;
 }
@@ -983,7 +983,7 @@ input:-webkit-autofill {
 
 /* Search page - 4 cards per row with smaller gap then home page */
 .search-container .cards {
-  gap: 24px;
+  gap: 18px;
 }
 
 /* 4 cards per row */
@@ -1054,7 +1054,7 @@ input:-webkit-autofill {
 
 /* Hourly rate text */
 .hourly-rate .rate {
-  font-size: 1.2em;
+  font-size: 14px;
   font-weight: bold;
 }
 
@@ -1065,8 +1065,8 @@ input:-webkit-autofill {
 }
 
 .star-rating span {
-  font-size: 1.1em;
-  margin-left: 6px;
+  font-size: 12px;
+  margin-right: 4px;
 }
 
 .star-rating .rating {
@@ -1137,12 +1137,12 @@ input:-webkit-autofill {
   margin: 24px 0 32px;
 }
 
-.rating-info {
+/* .rating-info {
   font-size: 16px;
   margin-bottom: 24px;
   font-weight: bold;
   gap: 16px;
-}
+} */
 
 .star-icon {
   font-size: 18px;
@@ -1740,6 +1740,7 @@ input:-webkit-autofill {
   .rating-info span {
     margin-left: 5px;
   }
+  
   .auth-container.tutor-details .btn-primary {
     margin-top: 0;
   }
