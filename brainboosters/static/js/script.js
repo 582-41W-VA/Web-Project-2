@@ -106,6 +106,51 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  const observerOptions = {
+    root: null, // viewport
+    threshold: 0.2, // Trigger when 20% of the section is visible
+  };
+
+  const aboutSection = document.querySelector(".about");
+
+  if (aboutSection) {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          aboutSection.querySelector(".left").classList.add("show");
+          aboutSection.querySelector(".right").classList.add("show");
+          observer.unobserve(entry.target); 
+        }
+      });
+    }, observerOptions);
+
+    observer.observe(aboutSection);
+  }
+
+  const tutorLeftSide = document.querySelector(".tutor .left");
+  const tutorRightSide = document.querySelector(".tutor .right");
+  const parentLeftSide = document.querySelector(".parents .left");
+  const parentRightSide = document.querySelector(".parents .right");
+
+  // Create the IntersectionObserver to trigger animations
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    },
+    { threshold: 0.2 }  // Trigger when 20% of the element is visible
+  );
+
+  // Observe the left and right sides for animation trigger
+  observer.observe(tutorLeftSide);
+  observer.observe(tutorRightSide);
+  observer.observe(parentLeftSide);
+  observer.observe(parentRightSide);
+
 });
 // Responsive Menu End
 
