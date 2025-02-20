@@ -345,6 +345,34 @@ section.banner {
   color: rgb(255, 255, 255);
 }
 
+/* START Banner Animation */
+
+/* Left effect */
+.banner .left {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* btn effect */
+.banner .btn-primary:hover {
+  animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* END Banner Animation */
 /* About */
 .about h2 {
   text-transform: uppercase;
@@ -378,6 +406,37 @@ section.about {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+/* START About Animation */
+
+.about .left, 
+.about .right {
+  opacity: 0;
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+/* Fading in left side */
+.about .left.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Sliding in right side */
+.about .right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Initial positions */
+.about .left {
+  transform: translateY(20px);
+}
+
+.about .right {
+  transform: translateX(100px);
+}
+
+/* END About Animation */
 
 /* Steps - Start learning in 3 steps */
 section.steps {
@@ -449,6 +508,33 @@ section.tutor {
   background-repeat: no-repeat;
 }
 
+/* START Tutor Animation */
+
+.tutor .left, .tutor .right {
+  opacity: 0;
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.tutor .left {
+  transform: translateX(-30px);
+}
+
+.tutor .right {
+  transform: translateX(0);
+}
+
+.tutor .left.show {
+  opacity: 1;
+  transform: translateX(0); /* Slide in to original position */
+}
+
+.tutor .right.show {
+  opacity: 1;
+  transform: translateX(0); /* No movement, just fade in */
+}
+
+/* End Tutor Animation */
+
 /* Parents */
 .parents h2 {
   margin-bottom: 24px;
@@ -481,6 +567,33 @@ section.parents {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+/* START Parents Animation */
+
+.parents .left, .parents .right {
+  opacity: 0;
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.parents .left {
+  transform: translateX(0); 
+}
+
+.parents .right {
+  transform: translateX(30px); 
+}
+
+.parents .left.show {
+  opacity: 1;
+  transform: translateX(0); 
+}
+
+.parents .right.show {
+  opacity: 1;
+  transform: translateX(0); 
+}
+
+/* End Parents Animation */
 
 /* Join us */
 section.join-us {
