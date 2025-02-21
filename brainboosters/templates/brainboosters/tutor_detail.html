@@ -77,7 +77,7 @@
     <h4 class="tutor-detail-margin">Contact Me</h4>
     <div class="contact-form">
       {% if user.is_authenticated and user.user_type == 'parent' %}
-      <form method="post">
+      <form method="post" id="contactForm">
         {% csrf_token %}
         <div class="name-fields">
           <div class="form-group input-box">
@@ -97,7 +97,7 @@
           <label for="id_message"></label>
           {{ contact_form.message }}
         </div>
-        <button type="submit" class="btn btn-primary">Send Message</button>
+        <button type="submit" class="btn btn-primary" name="submit_contact">Send Message</button>
       </form>
       {% else %}
       <p>You must be logged in as a parent to contact a tutor.</p>
