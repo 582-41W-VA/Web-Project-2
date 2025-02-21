@@ -99,6 +99,32 @@ a {
   color: white;
 }
 
+/* Full width background shared styles */
+.full-width-bg {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+/* White background */
+.white-bg {
+  background-color: #ffffff;
+}
+
+/* Yellow background */
+.yellow-bg {
+  background-color: #ffbf00;
+}
+
+/* Beige background */
+.beige-bg {
+  background-color: #eae0da;
+}
+
 /* Navigation Menu */
 nav .container {
   max-width: 1350px;
@@ -382,6 +408,7 @@ section.banner {
 section.about {
   padding: 72px 0;
   background: #fff;
+  position: relative;
 }
 
 .about .container {
@@ -484,7 +511,9 @@ section.steps .card img {
 section.tutor {
   padding: 56px 0;
   background: #fff;
+  position: relative;
 }
+
 .tutor .container {
   max-width: 1130px;
 }
@@ -543,6 +572,7 @@ section.tutor {
 section.parents {
   padding: 68px 0;
   background: #fff;
+  position: relative;
 }
 
 .parents .container {
@@ -600,6 +630,7 @@ section.join-us {
   background-color: #ffbf00;
   padding: 48px 0;
   text-align: center;
+  position: relative;
 }
 
 .join-us h2 {
@@ -611,6 +642,7 @@ section.tutor-card {
   padding-top: 56px;
   padding-bottom: 96px;
   background: #fff;
+  position: relative;
 }
 
 .tutor-card .container {
@@ -662,6 +694,7 @@ section.start {
   background-color: #eae0da;
   padding: 80px 0 120px;
   text-align: center;
+  position: relative;
 }
 
 section.start h2 {
@@ -949,12 +982,6 @@ input:-webkit-autofill {
   outline: none;
 }
 
-/*.user-type-buttons .btn-tutor:hover {
-  background-color: #d1c7b7;
-  color: #ffffff;
-  cursor: pointer;
-}*/
-
 /* Button Parent Custom styles  */
 .user-type-buttons .btn-parent {
   font-size: 24px;
@@ -968,12 +995,6 @@ input:-webkit-autofill {
   outline: none;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
-
-/*.user-type-buttons .btn-parent:hover {
-  background-color: #10a19d;
-  color: white;
-  cursor: pointer;
-}*/
 
 /* Styling for create-parent-profile page */
 .create-parent-profile-page .form-flex {
@@ -1250,13 +1271,6 @@ input:-webkit-autofill {
   border-top: 1px solid #ccc;
   margin: 24px 0 32px;
 }
-
-/* .rating-info {
-  font-size: 16px;
-  margin-bottom: 24px;
-  font-weight: bold;
-  gap: 16px;
-} */
 
 .star-icon {
   font-size: 18px;
